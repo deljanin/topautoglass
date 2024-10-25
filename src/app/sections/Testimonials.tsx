@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 
 export default function Testimonials() {
-  let testimonials = [
+  const testimonials = [
     {
       text: 'Excellent service. Great prices and very professional and respectable people. Helped me in my time of need. I recommend them to everyone!',
       name: 'Carla Grayson',
@@ -37,7 +37,7 @@ export default function Testimonials() {
       }, 5000);
       return () => clearInterval(interval);
     }
-  }, [isHovered]);
+  }, [isHovered, testimonials.length]);
   return (
     <section className="xl:min-h-[489px] min-h-[600px] py-28 relative shadow-[0px_0px_35px_0px_rgba(0,0,0,0.75)]">
       <h1 className="xl:text-6xl sm:text-5xl text-4xl text-center font-cateItalic pb-12 ">
@@ -57,7 +57,7 @@ export default function Testimonials() {
           <Image src="/images/arrow.svg" alt="" width={40} height={40} />
         </button>
         <p className="md:w-[700px] w-4/5 md:text-xl text-wrap text-center min-h-28">
-          "{testimonials[index].text}"
+          &ldquo;{testimonials[index].text}&rdquo;
         </p>
         <button
           className=" cursor-pointer transform rotate-180 border-transparent p-4 hover:rounded-full hover:border-white border-2 transition-all"

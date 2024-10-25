@@ -1,4 +1,3 @@
-import BeforeAfter from './sections/BeforeAfter';
 import Contact from './sections/Contact';
 import FAQ from './sections/FAQ';
 import Hero from './sections/Hero';
@@ -10,7 +9,6 @@ export default function Home() {
     <>
       <Hero />
       <Services />
-      {/* <BeforeAfter /> */}
       <Testimonials />
       <FAQ />
       <Contact />

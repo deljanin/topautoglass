@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import services from '../data/data';
 import CTA from '../components/CTA';
-import { Span } from 'next/dist/trace';
 
 export default function Services() {
   return (
@@ -32,7 +31,7 @@ export default function Services() {
                     <p className="pt-4 text-sm ">
                       {service.longDescription.map((text) => {
                         return (
-                          <span>
+                          <span key={text}>
                             {text}
                             <br />
                             <br />
@@ -84,7 +83,7 @@ export default function Services() {
                   <p className="pt-4 text-sm  md:text-right">
                     {service.longDescription.map((text) => {
                       return (
-                        <span>
+                        <span key={text}>
                           {text}
                           <br />
                           <br />

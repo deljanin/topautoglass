@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function FAQ() {
-  let entries = [
+  const entries = [
     {
       question:
         'Is a ADAS calibration recommended after a windshield replacement?',

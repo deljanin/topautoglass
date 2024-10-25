@@ -3,10 +3,21 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Image from 'next/image';
 import { z } from 'zod';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '../components/CTA';
+import { ChangeEvent } from 'react';
 
+interface FormData {
+  name: string;
+  email: string;
+  phoneNumber: string;
+  carYear: number;
+  brandMake: string;
+  model: string;
+  vinNumber: string;
+  whichGlass: string;
+}
 const quoteFormSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().email({ message: 'Invalid email address' }),
@@ -45,17 +56,17 @@ export default function Contact() {
     handleSubmit,
     reset,
     formState: { errors, isSubmitSuccessful },
-  } = useForm({
+  } = useForm<FormData>({
     resolver: zodResolver(quoteFormSchema),
   });
   const [phoneValue, setPhoneValue] = useState('');
-  const handlePhoneInput = (e: any) => {
+  const handlePhoneInput = (e: ChangeEvent<HTMLInputElement>) => {
     const formattedPhoneNumber = formatPhoneNumber(e.target.value);
     setPhoneValue(formattedPhoneNumber);
   };
   const [modalOpen, setModalOpen] = useState(false);
 
-  const onSubmit = (data: any) => {
+  const onSubmit: SubmitHandler<FormData> = (data) => {
     fetch('/api/email', {
       method: 'POST',
       headers: {
@@ -69,7 +80,7 @@ export default function Contact() {
     reset();
     setPhoneValue('');
     if (isSubmitSuccessful) setModalOpen(true);
-  }, [isSubmitSuccessful]);
+  }, [isSubmitSuccessful, reset]);
 
   return (
     <>
@@ -148,7 +159,7 @@ export default function Contact() {
               <label htmlFor={name}>{label}</label>
               <input
                 type={type}
-                {...register(name)}
+                {...register(name as keyof FormData)}
                 placeholder={placeholder}
                 value={name === 'phoneNumber' ? phoneValue : undefined}
                 {...(name === 'phoneNumber'
@@ -161,9 +172,9 @@ export default function Contact() {
                 className="bg-black rounded-md border-white border px-4 py-2 text-white placeholder-white placeholder-opacity-50 shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
               />
               {/* Displaying Error Messages */}
-              {errors[name] && (
+              {errors[name as keyof FormData] && (
                 <span className="text-red-600">
-                  {errors[name].message?.toString()}
+                  {errors[name as keyof FormData]?.message?.toString()}
                 </span>
               )}
             </div>

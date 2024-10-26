@@ -40,7 +40,7 @@ export default function Hero() {
               632
             </span>
             <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
-              Cars <br /> wrapped
+              Car <br /> wrap
             </span>
           </div>
           <div className="flex flex-col">

@@ -65,9 +65,9 @@ export default function RootLayout({
               <div>
                 <h3 className="font-bold mb-2">Working hours</h3>
                 <div className="flex flex-col gap-1">
-                  9 - 18:30 Mon-Fri
+                  8 - 18:30 Mon-Fri
                   <br />
-                  9 - 15 Sat
+                  8 - 15 Sat
                   <br />
                   Closed on Sundays
                 </div>

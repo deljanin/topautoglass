@@ -1,7 +1,3 @@
-// pages/privacy-policy.tsx
-
-import React from 'react';
-
 const PrivacyPolicy = () => {
   return (
     <div className="flex flex-col items-center py-10 px-5 md:px-20 lg:px-40  bg-[#252525]">
@@ -96,7 +92,7 @@ const PrivacyPolicy = () => {
 
         <section>
           <h2 className="font-cate text-2xl mb-1 font-semibold">
-            7. Children's Privacy
+            7. Children&apos;s Privacy
           </h2>
           <p>
             Our services are not intended for children under 15. We do not

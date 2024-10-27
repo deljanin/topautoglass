@@ -163,7 +163,7 @@ export default function Contact() {
           ].map(({ label, name, placeholder, type = 'text' }) => {
             if (name === 'whichGlass') {
               return (
-                <div className="flex flex-col gap-1 w-full">
+                <div key={name} className="flex flex-col gap-1 w-full">
                   <label htmlFor="whichGlass">Which Glass</label>
                   <div className="bg-black rounded-md border-white border px-3 py-2 text-white placeholder-white placeholder-opacity-50 shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]">
                     <select

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import CTA from '../components/CTA';
+import CountUp from '../components/CountUp';
 
 export default function Hero() {
   return (
@@ -26,32 +27,33 @@ export default function Hero() {
             </button>
           </a>
         </div>
-        <div className="xl:w-1/2 xl:justify-between xl:pt-32 pt-16 w-full flex items-center justify-evenly flex-wrap cursor-default">
-          <div className="flex flex-col">
+        <div className="xl:w-1/2 xl:justify-between xl:pt-32 pt-16 w-full flex items-center justify-evenly flex-wrap cursor-default gap-y-2">
+          <div className="flex flex-col xl:min-w-[105px]">
             <span className="sm:text-3xl text-xl font-cate opacity-90">
-              1435
+              <CountUp end={25000} duration={3000} />
             </span>
             <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
               Auto glass <br /> replacements
             </span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col xl:min-w-[105px]">
             <span className="sm:text-3xl text-xl font-cate opacity-90">
-              632
+              <CountUp end={10000} duration={3000} />
             </span>
             <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
-              Car <br /> wrap
+              Glass tints
+              <br /> applied
             </span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col xl:min-w-[105px]">
             <span className="sm:text-3xl text-xl font-cate opacity-90">
-              3251
+              <CountUp end={5000} duration={3000} />
             </span>
             <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
               Satisfied <br /> customer
             </span>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col ">
             <span className="sm:text-3xl text-xl font-cate opacity-90 flex items-baseline gap-1">
               <div className="sm:size-7 size-5 relative">
                 <Image src="/images/star.svg" alt="star" fill />

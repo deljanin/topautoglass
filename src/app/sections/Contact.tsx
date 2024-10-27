@@ -7,6 +7,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import CTA from '../components/CTA';
 import { ChangeEvent } from 'react';
+import Link from 'next/link';
 
 interface FormData {
   name: string;
@@ -33,7 +34,12 @@ const quoteFormSchema = z.object({
   vinNumber: z
     .string()
     .regex(/^[A-Za-z0-9-]{1,17}$/, { message: 'Invalid VIN number' }),
-  whichGlass: z.string().min(1, { message: 'Glass selection is required' }),
+  whichGlass: z
+    .string()
+    .min(1, { message: 'Glass selection is required' })
+    .refine((value) => value !== '', {
+      message: 'Please choose a valid option for Glass selection',
+    }),
 });
 
 function formatPhoneNumber(value: string) {
@@ -152,33 +158,87 @@ export default function Contact() {
             {
               label: 'Which Glass',
               name: 'whichGlass',
-              placeholder: 'Rear, front...',
+              placeholder: '',
             },
-          ].map(({ label, name, placeholder, type = 'text' }) => (
-            <div key={name} className="flex flex-col gap-1 w-full">
-              <label htmlFor={name}>{label}</label>
-              <input
-                type={type}
-                {...register(name as keyof FormData)}
-                placeholder={placeholder}
-                value={name === 'phoneNumber' ? phoneValue : undefined}
-                {...(name === 'phoneNumber'
-                  ? {
-                      onChange: (e) => {
-                        handlePhoneInput(e);
-                      },
-                    }
-                  : {})}
-                className="bg-black rounded-md border-white border px-4 py-2 text-white placeholder-white placeholder-opacity-50 shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
-              />
-              {/* Displaying Error Messages */}
-              {errors[name as keyof FormData] && (
-                <span className="text-red-600">
-                  {errors[name as keyof FormData]?.message?.toString()}
-                </span>
-              )}
-            </div>
-          ))}
+          ].map(({ label, name, placeholder, type = 'text' }) => {
+            if (name === 'whichGlass') {
+              return (
+                <div className="flex flex-col gap-1 w-full">
+                  <label htmlFor="whichGlass">Which Glass</label>
+                  <div className="bg-black rounded-md border-white border px-3 py-2 text-white placeholder-white placeholder-opacity-50 shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]">
+                    <select
+                      id="whichGlass"
+                      {...register('whichGlass')}
+                      defaultValue=""
+                      className="w-full bg-black border-none outline-none text-white placeholder-white">
+                      <option value="" disabled>
+                        Please choose an option
+                      </option>
+                      <option value="Windshield">Windshield</option>
+                      <option value="Drivers door front">
+                        Front left door
+                      </option>
+                      <option value="Passenger door front">
+                        Front right door
+                      </option>
+                      <option value="Rear driver side">Rear left door</option>
+                      <option value="Rear passenger side">
+                        Rear right door
+                      </option>
+                      <option value="Rear window">Rear window</option>
+                      <option value="Quarter Glass Left Side">
+                        Quarter Glass Left Side
+                      </option>
+                      <option value="Quarter Glass Right Side">
+                        Quarter Glass Right Side
+                      </option>
+                      <option value="Vent Glass Left Side">
+                        Vent Glass Left Side
+                      </option>
+                      <option value="Vent Glass Right Side">
+                        Vent Glass Right Side
+                      </option>
+                      <option value="Sunroof">Sunroof</option>
+                      <option value="Moonroof">Moonroof</option>
+                      <option value="Not Listed">Not Listed</option>
+                      <option value="Multiple">Multiple</option>
+                    </select>
+                  </div>
+                  {errors.whichGlass && (
+                    <span className="text-red-600">
+                      {errors.whichGlass.message}
+                    </span>
+                  )}
+                </div>
+              );
+            } else {
+              return (
+                <div key={name} className="flex flex-col gap-1 w-full">
+                  <label htmlFor={name}>{label}</label>
+                  <input
+                    type={type}
+                    {...register(name as keyof FormData)}
+                    placeholder={placeholder}
+                    value={name === 'phoneNumber' ? phoneValue : undefined}
+                    {...(name === 'phoneNumber'
+                      ? {
+                          onChange: (e) => {
+                            handlePhoneInput(e);
+                          },
+                        }
+                      : {})}
+                    className="bg-black rounded-md border-white border px-4 py-2 text-white placeholder-white placeholder-opacity-50 shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
+                  />
+                  {/* Displaying Error Messages */}
+                  {errors[name as keyof FormData] && (
+                    <span className="text-red-600">
+                      {errors[name as keyof FormData]?.message?.toString()}
+                    </span>
+                  )}
+                </div>
+              );
+            }
+          })}
 
           <div className="w-full flex flex-col items-center justify-center md:gap-0 gap-3 md:justify-between md:flex-row md:col-span-2 mt-4">
             <div className=" text-lg">
@@ -195,12 +255,12 @@ export default function Contact() {
               </button>
             </a>
           </div>
-          <a
+          <Link
             href="/privacy-policy"
             className="text-xs opacity-50 3xl:text-left text-center md:col-span-2">
             By submitting this form, you agree to our{' '}
             <span className="underline">Privacy Policy</span>.
-          </a>
+          </Link>
         </form>
 
         <div className="py-20">
@@ -226,7 +286,7 @@ export default function Contact() {
           alt=""
           width={821}
           height={404}
-          className="3xl:absolute 3xl:top-[calc(50%-202px)] 3xl:right-5 "
+          className="3xl:absolute 3xl:top-[calc(50%-202px)] 3xl:right-5 3xl:pb-0 pb-10"
         />
       </div>
     </>

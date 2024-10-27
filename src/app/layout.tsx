@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import services from './data/data';
 import Navbar from './sections/Navbar';
+import Link from 'next/link';
 
 const cateBold = localFont({
   src: './fonts/CateBold.ttf',
@@ -65,9 +66,9 @@ export default function RootLayout({
               <div>
                 <h3 className="font-bold mb-2">Working hours</h3>
                 <div className="flex flex-col gap-1">
-                  8 - 18:30 Mon-Fri
+                  8:00 - 18:30 Mon-Fri
                   <br />
-                  8 - 15 Sat
+                  8:00 - 15:00 Sat
                   <br />
                   Closed on Sundays
                 </div>
@@ -111,7 +112,7 @@ export default function RootLayout({
             <div className="xl:px-64 md:justify-between md:gap-0 md:flex-row md:text-left md:pb-0 text-center pt-28 pb-10 px-5 flex items-center flex-col gap-10">
               <span>©2024 Top Auto Glass. All rights reserved.</span>
               <div className="flex md:gap-12 md:flex-row gap-10 flex-col">
-                <a href="/privacy-policy">Privacy policy</a>
+                <Link href="/privacy-policy">Privacy policy</Link>
                 <a
                   href="https://vanu.software"
                   target="_blank"

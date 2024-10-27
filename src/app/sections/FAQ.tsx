@@ -16,7 +16,7 @@ export default function FAQ() {
     {
       question: 'Are walk-ins accepted?',
       answer:
-        'Yes, just come Monday to Friday between 8 and 5 and on Saturdays between 8 and 2:30.',
+        'Yes, just come Monday to Friday between 8:00 and 17:00 and on Saturdays between 8:00 and 14:30.',
     },
     {
       question: 'How long does PPF installation usually take?',

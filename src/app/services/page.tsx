@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import services from '../data/data';
 import CTA from '../components/CTA';
+import Link from 'next/link';
 
 export default function Services() {
   return (
@@ -39,13 +40,13 @@ export default function Services() {
                         );
                       })}
                     </p>
-                    <a href="/#contact" className="">
+                    <Link href="/#contact" className="">
                       <CTA
                         text="Get a free quote"
                         type="button"
                         width={undefined}
                       />
-                    </a>
+                    </Link>
                   </div>
                   <div className="relative md:w-1/2 w-full h-[300px] md:h-auto">
                     <Image
@@ -91,13 +92,13 @@ export default function Services() {
                       );
                     })}
                   </p>
-                  <a href="/#contact" className="">
+                  <Link href="/#contact" className="">
                     <CTA
                       text="Get a free quote"
                       type="button"
                       width={undefined}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
             );

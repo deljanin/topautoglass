@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function BeforeAfter() {
+export function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -82,16 +82,7 @@ export default function BeforeAfter() {
   );
 }
 
-{
-  /*
-    1x1            
-
-    'use client';
-
-import Image from 'next/image';
-import { useState } from 'react';
-
-export default function BeforeAfter() {
+export function BeforeAfter2() {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -178,7 +169,4 @@ export default function BeforeAfter() {
       </div>
     </div>
   );
-}
-
-    */
 }

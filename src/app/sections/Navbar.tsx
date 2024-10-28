@@ -10,6 +10,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const isPopupShown = useRef(false); // Tracks if popup has been shown
   const [popupOpen, setPopupOpen] = useAtom(popupOpenAtom); // Use popup state from Jotai
+  const modalRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
     // Only show the popup if it hasn't been shown in this session
@@ -17,7 +18,27 @@ export default function Navbar() {
       setPopupOpen(true);
       isPopupShown.current = true; // Set ref to true to prevent re-triggering
     }
-  }, [setPopupOpen]);
+
+    // Close modal if clicked outside
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setPopupOpen(false); // Close the modal
+      }
+    }
+
+    if (popupOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [popupOpen, setPopupOpen]);
 
   return (
     <>
@@ -29,7 +50,8 @@ export default function Navbar() {
             flex items-center justify-center
             `}>
           <div
-            className="flex flex-col items-center justify-center gap-3 md:p-20 px-5 py-10
+            ref={modalRef}
+            className="relative flex flex-col items-center justify-center gap-3 md:p-20 px-5 py-10
              bg-[#252525] shadow-[0_0_20px_5px_rgba(0,0,0,0.5)] rounded-md">
             <h1 className="text-5xl text-center font-cate">$20 OFF</h1>
             <p className="text-xl text-center">
@@ -39,6 +61,11 @@ export default function Navbar() {
               onClick={() => setPopupOpen(false)}
               className="cursor-pointer text-xl mt-5">
               <CTA text="Get a free quote" type="button" width={undefined} />
+            </div>
+            <div
+              className="absolute top-0 right-0 size-6 m-3 bg-[#252525] cursor-pointer "
+              onClick={() => setPopupOpen(false)}>
+              <Image src="/images/close.svg" alt="close" fill />
             </div>
           </div>
         </div>

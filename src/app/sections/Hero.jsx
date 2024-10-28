@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import CTA from '../components/CTA';
 import CountUp from '../components/CountUp';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -18,14 +19,14 @@ export default function Hero() {
           <br className="hidden sm:block" /> your car deserves today.
         </p>
         <div className="xl:justify-start flex justify-center items-center sm:gap-8 gap-2 pt-12">
-          <a href="/services">
+          <Link href="/services">
             <CTA text="Explore Services" />
-          </a>
-          <a href="/#contact">
+          </Link>
+          <Link href="/#contact">
             <button className="hover:scale-110 transition-all px-3 py-2 border-2 rounded-md border-glassBlue text-glassBlue bg-black font-cate shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] hover:text-white hover:border-white">
               Get a Free Quote
             </button>
-          </a>
+          </Link>
         </div>
         <div className="xl:w-1/2 xl:justify-between xl:pt-32 pt-16 w-full flex items-center justify-evenly flex-wrap cursor-default gap-y-2">
           <div className="flex flex-col xl:min-w-[105px]">

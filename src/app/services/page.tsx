@@ -55,6 +55,7 @@ export default function Services() {
                       fill={true}
                       className="md:rounded-r-md rounded-b-md"
                       objectFit="cover"
+                      priority
                     />
                   </div>
                 </div>
@@ -73,6 +74,7 @@ export default function Services() {
                     fill={true}
                     className="md:rounded-r-md rounded-b-md"
                     objectFit="cover"
+                    priority
                   />
                 </div>
                 <div className="flex md:w-1/2 flex-col gap-2 items-start md:items-end lg:px-16 px-8 lg:py-16 py-8 ">

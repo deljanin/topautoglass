@@ -44,10 +44,7 @@ export function BeforeAfter() {
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}>
-        <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate z-10">
-          Before
-        </div>
-        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate z-10">
+        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
           After
         </div>
         <Image
@@ -60,7 +57,10 @@ export function BeforeAfter() {
         <div
           className="absolute top-0 left-0 right-0 w-full  aspect-[2/1] m-auto overflow-hidden select-none rounded-md"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-          <Image fill alt="" src="/images/beforeAfter/before1.jpg" />
+          <Image fill alt="" src="/images/beforeAfter/before1.jpg" />{' '}
+          <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate">
+            Before
+          </div>
         </div>
         <div
           className="absolute top-0 bottom-0 w-2 bg-[#252525] cursor-ew-resize"
@@ -123,12 +123,6 @@ export function BeforeAfter2() {
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}>
-        <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate z-10">
-          Before
-        </div>
-        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate z-10">
-          After
-        </div>
         <Image
           alt=""
           fill
@@ -137,6 +131,9 @@ export function BeforeAfter2() {
           src="/images/beforeAfter/after2.jpeg"
           className="rounded-md object-center"
         />
+        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
+          After
+        </div>
 
         <div
           className="absolute top-0 left-0 right-0 w-full md:max-h-[800px] aspect-[1/1] overflow-hidden select-none rounded-md"
@@ -149,6 +146,9 @@ export function BeforeAfter2() {
             src="/images/beforeAfter/before2.jpeg"
             className="object-center"
           />
+          <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate">
+            Before
+          </div>
         </div>
         <div
           className="absolute top-0 bottom-0 w-2 bg-[#252525] cursor-ew-resize "

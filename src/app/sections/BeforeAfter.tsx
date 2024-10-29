@@ -44,16 +44,15 @@ export function BeforeAfter() {
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
         onTouchStart={handleInteractionStart}>
-        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
-          After
-        </div>
         <Image
           alt=""
           fill
           src="/images/beforeAfter/after1.jpg"
           className="rounded-md"
         />
-
+        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
+          After
+        </div>
         <div
           className="absolute top-0 left-0 right-0 w-full  aspect-[2/1] m-auto overflow-hidden select-none rounded-md"
           style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>

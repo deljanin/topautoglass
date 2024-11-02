@@ -214,12 +214,12 @@ export default function Contact() {
               );
             } else {
               return (
-                <div key={name} className="flex flex-col gap-1 w-full">
-                  <label
-                    htmlFor={name}
-                    className={type === 'hidden' ? 'hidden' : ''}>
-                    {label}
-                  </label>
+                <div
+                  key={name}
+                  className={`flex flex-col gap-1 w-full ${
+                    type === 'hidden' ? 'hidden' : ''
+                  }`}>
+                  <label htmlFor={name}>{label}</label>
                   <input
                     type={type}
                     {...register(name as keyof FormData)}

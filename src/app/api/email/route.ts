@@ -4,6 +4,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
 
 export async function POST(request: Request) {
   const {
+    extra,
     name,
     email,
     phoneNumber,
@@ -13,6 +14,9 @@ export async function POST(request: Request) {
     vinNumber,
     whichGlass,
   } = await request.json();
+  if (extra !== undefined && extra.length > 0) {
+    return;
+  }
 
   const htmlContent = `
     <h3>Website Quote Request</h3>

@@ -5,8 +5,10 @@ import CTA from '../components/CTA';
 import { useAtom } from 'jotai';
 import { popupOpenAtom } from '../atoms'; // Import atom
 import Link from 'next/link';
+import { useLenis } from 'lenis/react';
 
 export default function Navbar() {
+  const lenis = useLenis();
   const [open, setOpen] = useState(false);
   const isPopupShown = useRef(false); // Tracks if popup has been shown
   const [popupOpen, setPopupOpen] = useAtom(popupOpenAtom); // Use popup state from Jotai
@@ -74,23 +76,43 @@ export default function Navbar() {
       <nav
         className={`lg:hidden fixed top-0 left-0 right-0 h-full w-full
             py-64 px-5  bg-opacity-70  z-50 flex flex-col items-end justify-evenly 
-            font-cate text-2xl transform transition-transform duration-500 
+            font-cate text-2xl transform transition-transform 
             ${open ? 'translate-x-0' : 'translate-x-full'}
             backdrop-blur-lg bg-black`}>
-        <Link href="/" onClick={() => setOpen(!open)}>
+        <Link
+          href="/"
+          onClick={() => {
+            setOpen(!open);
+            lenis?.scrollTo('#hero', { offset: -80, duration: 2 });
+          }}>
           Home
         </Link>
-        <Link href="/services" onClick={() => setOpen(!open)}>
+        <Link
+          href="/#services"
+          onClick={() => {
+            setOpen(!open);
+            lenis?.scrollTo('#services', { offset: -80, duration: 2 });
+          }}>
           Services
         </Link>
-        <Link href="/#contact" onClick={() => setOpen(!open)}>
+        <Link
+          href="/#contact"
+          onClick={() => {
+            setOpen(!open);
+            lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
+          }}>
           Contact
         </Link>
       </nav>
 
       {/* Desktop and mobile navbar */}
       <nav className="sticky top-0 left-0 right-0 h-[80px] xl:px-64 lg:px-32 px-5 flex items-center justify-between bg-black z-50 shadow-[0_0_20px_5px_rgba(0,0,0,0.5)]">
-        <Link href="/">
+        <Link
+          href="/"
+          onClick={() => {
+            setOpen(false);
+            lenis?.scrollTo('#hero', { offset: -80 });
+          }}>
           <Image
             src="/images/logo.jpg"
             alt="Top Auto Glass logo"
@@ -100,12 +122,20 @@ export default function Navbar() {
         </Link>
         {/* Desktop menu */}
         <div className="hidden lg:flex gap-8 items-center font-cate text-lg">
-          <Link className="hover:text-glassBlue transition-colors" href="/">
+          <Link
+            className="hover:text-glassBlue transition-colors"
+            href="/"
+            onClick={() => {
+              lenis?.scrollTo('#hero', { offset: -80 });
+            }}>
             Home
           </Link>
           <Link
             className="hover:text-glassBlue transition-colors"
-            href="/services">
+            href="/#services"
+            onClick={() => {
+              lenis?.scrollTo('#services', { offset: -80 });
+            }}>
             Services
           </Link>
           {/* <Link className="hover:text-glassBlue transition-colors" href="/gallery">
@@ -113,7 +143,10 @@ export default function Navbar() {
           </Link> */}
           <Link
             className="hover:text-glassBlue transition-colors"
-            href="/#contact">
+            href="/#contact"
+            onClick={() => {
+              lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
+            }}>
             Contact
           </Link>
           <div className="border-2 rounded-md border-glassBlue text-glassBlue hover:text-white hover:border-white transition-colors">

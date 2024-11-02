@@ -131,6 +131,7 @@ export default function Contact() {
           className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 md:w-[600px]">
           {/* Input Fields */}
           {[
+            { label: 'extra', name: 'extra', placeholder: '', type: 'hidden' },
             { label: 'Name', name: 'name', placeholder: 'Josh Smith' },
             {
               label: 'Email',
@@ -214,7 +215,11 @@ export default function Contact() {
             } else {
               return (
                 <div key={name} className="flex flex-col gap-1 w-full">
-                  <label htmlFor={name}>{label}</label>
+                  <label
+                    htmlFor={name}
+                    className={type === 'hidden' ? 'hidden' : ''}>
+                    {label}
+                  </label>
                   <input
                     type={type}
                     {...register(name as keyof FormData)}

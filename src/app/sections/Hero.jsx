@@ -1,11 +1,17 @@
+'use client';
 import Image from 'next/image';
 import CTA from '../components/CTA';
 import CountUp from '../components/CountUp';
 import Link from 'next/link';
+import { useLenis } from 'lenis/react';
 
 export default function Hero() {
+  const lenis = useLenis();
+
   return (
-    <section className="relative xl:px-64 sm:h-[calc(100vh-80px)] sm:py-0 pb-16 pt-14 md:px-32 px-5 bg-[linear-gradient(119deg,#181818_0%,#252525_78.29%)] overflow-hidden">
+    <section
+      id="hero"
+      className="relative xl:px-64 sm:h-[calc(100vh-80px)] sm:py-0 pb-16 pt-14 md:px-32 px-5 bg-[linear-gradient(119deg,#181818_0%,#252525_78.29%)] overflow-hidden">
       {/* Text and content container */}
       <div className="relative z-20 h-full flex flex-col justify-center">
         <h1 className="xl:text-left xl:text-6xl sm:text-5xl text-4xl text-center leading-tight font-cateItalic">
@@ -19,10 +25,18 @@ export default function Hero() {
           <br className="hidden sm:block" /> your car deserves today.
         </p>
         <div className="xl:justify-start flex justify-center items-center sm:gap-8 gap-2 pt-12">
-          <Link href="/services">
+          <Link
+            href="/#services"
+            onClick={() => {
+              lenis?.scrollTo('#services', { offset: -80 });
+            }}>
             <CTA text="Explore Services" />
           </Link>
-          <Link href="/#contact">
+          <Link
+            href="/#contact"
+            onClick={() => {
+              lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
+            }}>
             <button className="hover:scale-110 transition-all px-3 py-2 border-2 rounded-md border-glassBlue text-glassBlue bg-black font-cate shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] hover:text-white hover:border-white">
               Get a Free Quote
             </button>

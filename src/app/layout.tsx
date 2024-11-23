@@ -58,7 +58,7 @@ export default function RootLayout({
                     {services.map((service) => (
                       <a
                         key={service.title}
-                        href={`/services#${service.link}`}
+                        href={`#${service.link}`}
                         className="hover:scale-110 transition-all">
                         {service.title}
                       </a>

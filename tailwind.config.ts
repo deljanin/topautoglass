@@ -1,25 +1,25 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       screens: {
-        '3xl': '1720px',
+        "3xl": "1720px",
       },
       fontFamily: {
-        cate: ['var(--font-cate-bold)'],
-        cateItalic: ['var(--font-cate-bold-italic)'],
-        inter: ['var(--font-inter)'],
+        cate: ["var(--font-cate-bold)"],
+        cateItalic: ["var(--font-cate-bold-italic)"],
+        inter: ["var(--font-inter)"],
       },
       colors: {
-        glassBlue: 'var(--glass-blue)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        glassBlue: "var(--glass-blue)",
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useState } from 'react';
+import Image from "next/image";
+import { useState } from "react";
 
 export function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -14,7 +14,7 @@ export function BeforeAfter() {
   };
 
   const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
     if (!isDragging) return;
     const rect = event.currentTarget.getBoundingClientRect();
@@ -35,44 +35,52 @@ export function BeforeAfter() {
 
   return (
     <div
-      className="2xl:px-64 xl:px-32 px-5 w-full relative rounded-md pb-20 "
+      className="relative w-full rounded-md px-5 pb-20 xl:px-32 2xl:px-64"
       onMouseUp={handleInteractionEnd}
-      onTouchEnd={handleInteractionEnd}>
+      onTouchEnd={handleInteractionEnd}
+    >
       <div
-        className="relative w-full aspect-[2/1] m-auto overflow-hidden select-none shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
+        className="relative m-auto aspect-[2/1] w-full select-none overflow-hidden shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
-        onTouchStart={handleInteractionStart}>
+        onTouchStart={handleInteractionStart}
+      >
         <Image
           alt=""
           fill
           src="/images/beforeAfter/after1.jpg"
           className="rounded-md"
         />
-        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
+        <div className="absolute right-0 top-0 rounded-bl-md rounded-tr-md bg-black px-4 py-2 font-cate">
           After
         </div>
         <div
-          className="absolute top-0 left-0 right-0 w-full  aspect-[2/1] m-auto overflow-hidden select-none rounded-md"
-          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
-          <Image fill alt="" src="/images/beforeAfter/before1.jpg" />{' '}
-          <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate">
+          className="absolute left-0 right-0 top-0 m-auto aspect-[2/1] w-full select-none overflow-hidden rounded-md"
+          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+        >
+          <Image
+            fill
+            alt="Huston car window tinting"
+            src="/images/beforeAfter/before1.jpg"
+          />{" "}
+          <div className="absolute left-0 top-0 rounded-br-md rounded-tl-md bg-black px-3 py-2 font-cate">
             Before
           </div>
         </div>
         <div
-          className="absolute top-0 bottom-0 w-2 bg-[#252525] cursor-ew-resize"
+          className="absolute bottom-0 top-0 w-2 cursor-ew-resize bg-[#252525]"
           style={{
             left: `calc(${sliderPosition}% - 4px)`,
-          }}>
-          <div className="bg-[#252525]  flex items-center justify-center absolute rounded-full h-10 w-10 left-[calc(50%-1.25rem)] top-[calc(50%-1.25rem)] ">
+          }}
+        >
+          <div className="absolute left-[calc(50%-1.25rem)] top-[calc(50%-1.25rem)] flex h-10 w-10 items-center justify-center rounded-full bg-[#252525]">
             <Image
-              alt=""
+              alt="Car window tinting in Houston"
               width={30}
               height={30}
               src="/images/beforeAfter/slider.svg"
-              className="rounded-md"
+              className="pointer-events-none rounded-md"
             />
           </div>
         </div>
@@ -92,7 +100,7 @@ export function BeforeAfter2() {
   };
 
   const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
   ) => {
     if (!isDragging) return;
     const rect = event.currentTarget.getBoundingClientRect();
@@ -113,55 +121,57 @@ export function BeforeAfter2() {
 
   return (
     <div
-      className="2xl:px-64 xl:px-32 px-5 w-full relative rounded-md pb-20 "
+      className="relative w-full rounded-md px-5 pb-20 xl:px-32 2xl:px-64"
       onMouseUp={handleInteractionEnd}
-      onTouchEnd={handleInteractionEnd}>
+      onTouchEnd={handleInteractionEnd}
+    >
       <div
-        className="relative w-full aspect-[1/1] md:max-h-[800px] overflow-hidden select-none shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"
+        className="relative aspect-[1/1] w-full select-none overflow-hidden shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)] md:max-h-[800px]"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
         onMouseDown={handleInteractionStart}
-        onTouchStart={handleInteractionStart}>
+        onTouchStart={handleInteractionStart}
+      >
         <Image
-          alt=""
+          alt="Windshield repair in Houston"
           fill
           priority
           objectFit="cover"
           src="/images/beforeAfter/after2.jpeg"
           className="rounded-md object-center"
         />
-        <div className="absolute top-0 right-0 rounded-bl-md rounded-tr-md px-4 py-2 bg-black font-cate">
+        <div className="absolute right-0 top-0 rounded-bl-md rounded-tr-md bg-black px-4 py-2 font-cate">
           After
         </div>
 
         <div
-          className="absolute top-0 left-0 right-0 w-full md:max-h-[800px] aspect-[1/1] overflow-hidden select-none rounded-md"
-          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}>
+          className="absolute left-0 right-0 top-0 aspect-[1/1] w-full select-none overflow-hidden rounded-md md:max-h-[800px]"
+          style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
+        >
           <Image
             fill
-            priority
             objectFit="cover"
-            alt=""
+            alt="Car window repair in Houston"
             src="/images/beforeAfter/before2.jpeg"
             className="object-center"
           />
-          <div className="absolute top-0 left-0 rounded-br-md rounded-tl-md px-3 py-2 bg-black font-cate">
+          <div className="absolute left-0 top-0 rounded-br-md rounded-tl-md bg-black px-3 py-2 font-cate">
             Before
           </div>
         </div>
         <div
-          className="absolute top-0 bottom-0 w-2 bg-[#252525] cursor-ew-resize "
+          className="absolute bottom-0 top-0 w-2 cursor-ew-resize bg-[#252525]"
           style={{
             left: `calc(${sliderPosition}% - 4px)`,
-          }}>
-          <div className="bg-[#252525]  flex items-center justify-center absolute rounded-full h-10 w-10 left-[calc(50%-1.25rem)] top-[calc(50%-1.25rem)] ">
+          }}
+        >
+          <div className="absolute left-[calc(50%-1.25rem)] top-[calc(50%-1.25rem)] flex h-10 w-10 items-center justify-center rounded-full bg-[#252525]">
             <Image
               alt=""
               width={30}
               height={30}
-              priority
               src="/images/beforeAfter/slider.svg"
-              className="rounded-md "
+              className="pointer-events-none rounded-md"
             />
           </div>
         </div>

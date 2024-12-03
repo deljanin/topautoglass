@@ -1,15 +1,15 @@
 const PrivacyPolicy = () => {
   return (
-    <div className="flex flex-col items-center py-10 px-5 md:px-20 lg:px-40  bg-[#252525]">
-      <h1 className="text-4xl font-cateItalic font-bold text-center mb-6">
+    <div className="flex flex-col items-center bg-[#252525] px-5 py-10 md:px-20 lg:px-40">
+      <h1 className="mb-6 text-center font-cateItalic text-4xl font-bold">
         Privacy Policy
       </h1>
 
-      <p className="text-center mb-10">Effective Date: 10.25.2024</p>
+      <p className="mb-10 text-center">Effective Date: 10.25.2024</p>
 
-      <div className="space-y-6 max-w-4xl">
+      <div className="max-w-4xl space-y-6">
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             1. Introduction
           </h2>
           <p>
@@ -21,7 +21,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             2. Information We Collect
           </h2>
           <ul className="list-disc pl-6">
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             3. How We Use Your Information
           </h2>
           <ul className="list-disc pl-6">
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             4. Sharing Your Information
           </h2>
           <p>
@@ -70,7 +70,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             5. Data Protection and Security
           </h2>
           <p>
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             6. Your Rights and Choices
           </h2>
           <p>
@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             7. Children&apos;s Privacy
           </h2>
           <p>
@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             8. Texas-Specific Compliance
           </h2>
           <p>
@@ -112,7 +112,7 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             9. Governing Law
           </h2>
           <p>
@@ -122,12 +122,12 @@ const PrivacyPolicy = () => {
         </section>
 
         <section>
-          <h2 className="font-cate text-2xl mb-1 font-semibold">
+          <h2 className="mb-1 font-cate text-2xl font-semibold">
             10. Contact Us
           </h2>
           <p>
             If you have any questions or concerns about this Privacy Policy,
-            please contact us at:{' '}
+            please contact us at:{" "}
             <a href="mailto:topautoglasstexas@gmail.com" className="underline">
               topautoglasstexas@gmail.com
             </a>

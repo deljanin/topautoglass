@@ -1,9 +1,9 @@
-'use client';
-import Image from 'next/image';
-import CTA from '../components/CTA';
-import CountUp from '../components/CountUp';
-import Link from 'next/link';
-import { useLenis } from 'lenis/react';
+"use client";
+import Image from "next/image";
+import CTA from "../components/CTA";
+import CountUp from "../components/CountUp";
+import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 export default function Hero() {
   const lenis = useLenis();
@@ -11,86 +11,80 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative xl:px-64 sm:h-[calc(100vh-80px)] sm:py-0 pb-16 pt-14 md:px-32 px-5 bg-[linear-gradient(119deg,#181818_0%,#252525_78.29%)] overflow-hidden">
+      className="relative overflow-hidden bg-[linear-gradient(119deg,#181818_0%,#252525_78.29%)] px-5 pb-16 pt-14 sm:h-[calc(100vh-80px)] sm:py-0 md:px-32 xl:px-64"
+    >
       {/* Text and content container */}
-      <div className="relative z-20 h-full flex flex-col justify-center">
-        <h1 className="xl:text-left xl:text-6xl sm:text-5xl text-4xl text-center leading-tight font-cateItalic">
-          Your One-Stop Shop for <br className="hidden md:block" /> Auto Glass &
-          Custom <br className="hidden md:block" /> Vehicle Enhancements
+      <div className="relative z-20 flex h-full flex-col justify-center">
+        <h1 className="text-center font-cateItalic text-4xl leading-tight sm:text-5xl xl:text-left xl:text-6xl">
+          Your One-Stop Shop for <br className="hidden md:block" />
+          Custom Vehicle <br className="hidden lg:block" /> Enhancements &
+          <br className="hidden lg:block" /> Auto Glass in Houston
         </h1>
-        <p className="xl:text-left sm:text-xl text-center text-wrap pt-4">
-          Specializing in auto glass, tints, adas calibration,
-          <br className="hidden sm:block" /> wraps, PPF and ceramic coating. Get
-          the attention
-          <br className="hidden sm:block" /> your car deserves today.
+        <p className="text-wrap pt-4 text-center sm:text-xl xl:text-left">
+          Specializing in auto glass, tints, adas calibration, wraps, PPF and
+          <br className="hidden sm:block" /> ceramic coating. Get the attention
+          your car deserves today.
         </p>
-        <div className="xl:justify-start flex justify-center items-center sm:gap-8 gap-2 pt-12">
+        <div className="flex items-center justify-center gap-2 pt-12 sm:gap-8 xl:justify-start">
           <Link
             href="/#services"
             onClick={() => {
-              lenis?.scrollTo('#services', { offset: -80 });
-            }}>
+              lenis?.scrollTo("#services", { offset: -80 });
+            }}
+          >
             <CTA text="Explore Services" />
           </Link>
           <Link
             href="/#contact"
             onClick={() => {
-              lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
-            }}>
-            <button className="hover:scale-110 transition-all px-3 py-2 border-2 rounded-md border-glassBlue text-glassBlue bg-black font-cate shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] hover:text-white hover:border-white">
+              lenis?.scrollTo("#contact", { offset: -80, duration: 2 });
+            }}
+          >
+            <button className="rounded-md border-2 border-glassBlue bg-black px-3 py-2 font-cate text-glassBlue shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-110 hover:border-white hover:text-white">
               Get a Free Quote
             </button>
           </Link>
         </div>
-        <div className="xl:w-1/2 xl:justify-between xl:pt-32 pt-16 w-full flex items-center justify-evenly flex-wrap cursor-default gap-y-2">
+        <div className="flex w-full cursor-default flex-wrap items-center justify-evenly gap-y-2 pt-16 xl:w-1/2 xl:justify-between xl:pt-32">
           <div className="flex flex-col xl:min-w-[105px]">
-            <span className="sm:text-3xl text-xl font-cate opacity-90">
+            <span className="font-cate text-xl opacity-90 sm:text-3xl">
               <CountUp end={25000} duration={3000} />
             </span>
-            <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
+            <span className="pt-1 text-sm leading-5 opacity-60 sm:text-base">
               Auto glass <br /> replacements
             </span>
           </div>
           <div className="flex flex-col xl:min-w-[105px]">
-            <span className="sm:text-3xl text-xl font-cate opacity-90">
+            <span className="font-cate text-xl opacity-90 sm:text-3xl">
               <CountUp end={10000} duration={3000} />
             </span>
-            <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
+            <span className="pt-1 text-sm leading-5 opacity-60 sm:text-base">
               Glass tints
               <br /> applied
             </span>
           </div>
           <div className="flex flex-col xl:min-w-[105px]">
-            <span className="sm:text-3xl text-xl font-cate opacity-90">
+            <span className="font-cate text-xl opacity-90 sm:text-3xl">
               <CountUp end={5000} duration={3000} />
             </span>
-            <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
+            <span className="pt-1 text-sm leading-5 opacity-60 sm:text-base">
               Satisfied <br /> customer
             </span>
           </div>
-          <div className="flex flex-col ">
-            <span className="sm:text-3xl text-xl font-cate opacity-90 flex items-baseline gap-1">
-              <div className="sm:size-7 size-5 relative">
+          <div className="flex flex-col">
+            <span className="flex items-baseline gap-1 font-cate text-xl opacity-90 sm:text-3xl">
+              <div className="relative size-5 sm:size-7">
                 <Image src="/images/star.svg" alt="star" fill />
               </div>
               4.8
             </span>
-            <span className="sm:text-base text-sm opacity-60 leading-5 pt-1">
+            <span className="pt-1 text-sm leading-5 opacity-60 sm:text-base">
               On Google <br /> reviews
             </span>
           </div>
         </div>
       </div>
-      <div
-        className="
-          absolute top-0 inset-0 h-full w-full z-10
-          left-0
-          xl:right-0 xl:w-[800px] xl:left-auto
-          before:block 2xl:before:hidden
-          before:z-20 before:bg-opacity-80 xl:before:bg-opacity-25
-          before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full
-          before:bg-black  before:pointer-events-none
-        ">
+      <div className="absolute inset-0 left-0 top-0 z-10 h-full w-full before:pointer-events-none before:absolute before:left-0 before:top-0 before:z-20 before:block before:h-full before:w-full before:bg-black before:bg-opacity-80 before:content-[''] xl:left-auto xl:right-0 xl:w-[800px] xl:before:bg-opacity-25 2xl:before:hidden">
         {/* <Image
           src="/images/hero.jpg"
           alt=""
@@ -102,7 +96,7 @@ export default function Hero() {
 
         <Image
           src="/images/hero.jpg"
-          alt="Hero Background"
+          alt="Auto glass in Houston"
           layout="fill"
           objectFit="cover"
           priority

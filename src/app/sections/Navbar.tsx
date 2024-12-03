@@ -1,11 +1,11 @@
-'use client';
-import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
-import CTA from '../components/CTA';
-import { useAtom } from 'jotai';
-import { popupOpenAtom } from '../atoms'; // Import atom
-import Link from 'next/link';
-import { useLenis } from 'lenis/react';
+"use client";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import CTA from "../components/CTA";
+import { useAtom } from "jotai";
+import { popupOpenAtom } from "../atoms"; // Import atom
+import Link from "next/link";
+import { useLenis } from "lenis/react";
 
 export default function Navbar() {
   const lenis = useLenis();
@@ -32,13 +32,13 @@ export default function Navbar() {
     }
 
     if (popupOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [popupOpen, setPopupOpen]);
 
@@ -47,26 +47,29 @@ export default function Navbar() {
       {/* Popup */}
       {popupOpen && (
         <div
-          className={`fixed top-0 left-0 right-0 h-full w-full
-            py-64 px-5 bg-opacity-10 backdrop-blur-sm bg-black  z-50 
-            flex items-center justify-center
-            `}>
+          className={`fixed left-0 right-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black bg-opacity-10 px-5 py-64 backdrop-blur-sm`}
+        >
           <div
             ref={modalRef}
-            className="relative flex flex-col items-center justify-center gap-3 md:p-20 px-5 py-10
-             bg-[#252525] shadow-[0_0_20px_5px_rgba(0,0,0,0.5)] rounded-md">
-            <h1 className="text-5xl text-center font-cate">$20 OFF</h1>
-            <p className="text-xl text-center">
+            className="relative flex flex-col items-center justify-center gap-3 rounded-md bg-[#252525] px-5 py-10 shadow-[0_0_20px_5px_rgba(0,0,0,0.5)] md:p-20"
+          >
+            <h1 className="text-center font-cate text-5xl">$20 OFF</h1>
+            <p className="text-center text-xl">
               First time customers get a $20 off
             </p>
             <div
-              onClick={() => setPopupOpen(false)}
-              className="cursor-pointer text-xl mt-5">
+              onClick={() => {
+                setPopupOpen(false);
+                lenis?.scrollTo("#contact", { offset: -80 });
+              }}
+              className="mt-5 cursor-pointer text-xl"
+            >
               <CTA text="Get a free quote" type="button" width={undefined} />
             </div>
             <div
-              className="absolute top-0 right-0 size-6 m-3 bg-[#252525] cursor-pointer "
-              onClick={() => setPopupOpen(false)}>
+              className="absolute right-0 top-0 m-3 size-6 cursor-pointer bg-[#252525]"
+              onClick={() => setPopupOpen(false)}
+            >
               <Image src="/images/close.svg" alt="close" fill />
             </div>
           </div>
@@ -74,45 +77,46 @@ export default function Navbar() {
       )}
       {/* Mobile menu */}
       <nav
-        className={`lg:hidden fixed top-0 left-0 right-0 h-full w-full
-            py-64 px-5  bg-opacity-70  z-50 flex flex-col items-end justify-evenly 
-            font-cate text-2xl transform transition-transform 
-            ${open ? 'translate-x-0' : 'translate-x-full'}
-            backdrop-blur-lg bg-black`}>
+        className={`fixed left-0 right-0 top-0 z-50 flex h-full w-full transform flex-col items-end justify-evenly bg-opacity-70 px-5 py-64 font-cate text-2xl transition-transform lg:hidden ${open ? "translate-x-0" : "translate-x-full"} bg-black backdrop-blur-lg`}
+      >
         <Link
           href="/"
           onClick={() => {
             setOpen(!open);
-            lenis?.scrollTo('#hero', { offset: -80, duration: 2 });
-          }}>
+            lenis?.scrollTo("#hero", { offset: -80, duration: 2 });
+          }}
+        >
           Home
         </Link>
         <Link
           href="/#services"
           onClick={() => {
             setOpen(!open);
-            lenis?.scrollTo('#services', { offset: -80, duration: 2 });
-          }}>
+            lenis?.scrollTo("#services", { offset: -80, duration: 2 });
+          }}
+        >
           Services
         </Link>
         <Link
           href="/#contact"
           onClick={() => {
             setOpen(!open);
-            lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
-          }}>
+            lenis?.scrollTo("#contact", { offset: -80, duration: 2 });
+          }}
+        >
           Contact
         </Link>
       </nav>
 
       {/* Desktop and mobile navbar */}
-      <nav className="sticky top-0 left-0 right-0 h-[80px] xl:px-64 lg:px-32 px-5 flex items-center justify-between bg-black z-50 shadow-[0_0_20px_5px_rgba(0,0,0,0.5)]">
+      <nav className="sticky left-0 right-0 top-0 z-50 flex h-[80px] items-center justify-between bg-black px-5 shadow-[0_0_20px_5px_rgba(0,0,0,0.5)] lg:px-32 xl:px-64">
         <Link
           href="/"
           onClick={() => {
             setOpen(false);
-            lenis?.scrollTo('#hero', { offset: -80 });
-          }}>
+            lenis?.scrollTo("#hero", { offset: -80 });
+          }}
+        >
           <Image
             src="/images/logo.jpg"
             alt="Top Auto Glass logo"
@@ -121,35 +125,38 @@ export default function Navbar() {
           />
         </Link>
         {/* Desktop menu */}
-        <div className="hidden lg:flex gap-8 items-center font-cate text-lg">
+        <div className="hidden items-center gap-8 font-cate text-lg lg:flex">
           <Link
-            className="hover:text-glassBlue transition-colors"
+            className="transition-colors hover:text-glassBlue"
             href="/"
             onClick={() => {
-              lenis?.scrollTo('#hero', { offset: -80 });
-            }}>
+              lenis?.scrollTo("#hero", { offset: -80 });
+            }}
+          >
             Home
           </Link>
           <Link
-            className="hover:text-glassBlue transition-colors"
+            className="transition-colors hover:text-glassBlue"
             href="/#services"
             onClick={() => {
-              lenis?.scrollTo('#services', { offset: -80 });
-            }}>
+              lenis?.scrollTo("#services", { offset: -80 });
+            }}
+          >
             Services
           </Link>
           {/* <Link className="hover:text-glassBlue transition-colors" href="/gallery">
             Gallery
           </Link> */}
           <Link
-            className="hover:text-glassBlue transition-colors"
+            className="transition-colors hover:text-glassBlue"
             href="/#contact"
             onClick={() => {
-              lenis?.scrollTo('#contact', { offset: -80, duration: 2 });
-            }}>
+              lenis?.scrollTo("#contact", { offset: -80, duration: 2 });
+            }}
+          >
             Contact
           </Link>
-          <div className="border-2 rounded-md border-glassBlue text-glassBlue hover:text-white hover:border-white transition-colors">
+          <div className="rounded-md border-2 border-glassBlue text-glassBlue transition-colors hover:border-white hover:text-white">
             <a className="px-2 py-1" href="tel:+18327958511">
               (832) 795-8511
             </a>
@@ -167,9 +174,9 @@ export default function Navbar() {
         </button>
       </nav>
       <a href="tel:+18327958511">
-        <div className="md:hidden fixed bottom-0 py-4 left-0 right-0 z-50 flex justify-center items-center gap-2 bg-black">
+        <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-center gap-2 bg-black py-4 md:hidden">
           <h3 className="font-cate text-xl">Call us</h3>
-          <div className=" border-2 rounded-md border-glassBlue text-glassBlue font-cate text-xl">
+          <div className="rounded-md border-2 border-glassBlue font-cate text-xl text-glassBlue">
             <div className="px-2 py-1">(832) 795-8511</div>
           </div>
         </div>

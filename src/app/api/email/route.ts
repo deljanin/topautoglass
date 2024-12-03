@@ -1,6 +1,6 @@
-import { NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+import { NextResponse } from "next/server";
+import sgMail from "@sendgrid/mail";
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export async function POST(request: Request) {
   const {
@@ -56,16 +56,16 @@ export async function POST(request: Request) {
     </table>`;
 
   const msg = {
-    to: 'topautoglasstexas@gmail.com', // topautoglasstexas@gmail.com
-    from: 'website@topautoglasshouston.com',
-    subject: 'Website Quote',
+    to: "topautoglasstexas@gmail.com", // topautoglasstexas@gmail.com
+    from: "website@topautoglasshouston.com",
+    subject: "Website Quote",
     text: `You have received a new quote request. Here is the information: ${name}, ${email}, ${phoneNumber}, ${carYear}, ${brandMake}, ${model}, ${vinNumber}, ${whichGlass}`,
     html: htmlContent,
   };
 
   try {
     await sgMail.send(msg);
-    return NextResponse.json('Email sent');
+    return NextResponse.json("Email sent");
   } catch (error) {
     console.error(error);
     return NextResponse.error();

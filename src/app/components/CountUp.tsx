@@ -1,7 +1,7 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { useAtomValue } from 'jotai';
-import { popupOpenAtom } from '../atoms';
+"use client";
+import React, { useState, useEffect } from "react";
+import { useAtomValue } from "jotai";
+import { popupOpenAtom } from "../atoms";
 
 type CountUpProps = {
   end: number;
@@ -48,7 +48,7 @@ const CountUp: React.FC<CountUpProps> = ({ end, duration = 2000 }) => {
   return (
     <span>
       {count}
-      {isComplete && '+'}
+      {isComplete && "+"}
     </span>
   );
 };

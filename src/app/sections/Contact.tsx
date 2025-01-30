@@ -275,20 +275,55 @@ export default function Contact() {
           </h3>
           <div className="flex flex-row flex-wrap items-center justify-center gap-4 md:justify-normal">
             {/* grayscale */}
-            <Image src="/images/mastercard.png" alt="" width={55} height={42} />
-            <Image src="/images/visa.svg" alt="" width={100} height={32} />
-            <Image src="/images/cashapp.svg" alt="" width={38} height={38} />
-            <Image src="/images/venmo.png" alt="" width={122} height={24} />
-            <Image src="/images/zelle.png" alt="" width={90} height={35} />
-            <Image src="/images/applepay.png" alt="" width={90} height={35} />
+            <Image
+              src="/images/contact/mastercard.png"
+              alt=""
+              width={55}
+              height={42}
+            />
+            <Image
+              src="/images/contact/visa.svg"
+              alt=""
+              width={100}
+              height={32}
+            />
+            <Image
+              src="/images/contact/cashapp.svg"
+              alt=""
+              width={38}
+              height={38}
+            />
+            <Image
+              src="/images/contact/venmo.png"
+              alt=""
+              width={122}
+              height={24}
+            />
+            <Image
+              src="/images/contact/zelle.png"
+              alt=""
+              width={90}
+              height={35}
+            />
+            <Image
+              src="/images/contact/applepay.png"
+              alt=""
+              width={90}
+              height={35}
+            />
             <div className="flex items-center gap-2">
-              <Image src="/images/cash.svg" alt="" width={46} height={36} />
+              <Image
+                src="/images/contact/cash.svg"
+                alt=""
+                width={46}
+                height={36}
+              />
               <span className="font-cate text-xl">Cash</span>
             </div>
           </div>
         </div>
         <Image
-          src="/images/contact.png"
+          src="/images/contact/contact.png"
           alt=""
           width={821}
           height={404}

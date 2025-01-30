@@ -56,7 +56,7 @@ export async function POST(request: Request) {
     </table>`;
 
   const msg = {
-    to: "topautoglasstexas@gmail.com", // topautoglasstexas@gmail.com
+    to: "pecadeljanin@gmail.com", // topautoglasstexas@gmail.com
     from: "website@topautoglasshouston.com",
     subject: "Website Quote",
     text: `You have received a new quote request. Here is the information: ${name}, ${email}, ${phoneNumber}, ${carYear}, ${brandMake}, ${model}, ${vinNumber}, ${whichGlass}`,

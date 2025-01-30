@@ -9,7 +9,8 @@ import { useLenis } from "lenis/react";
 
 export default function Navbar() {
   const lenis = useLenis();
-  const [open, setOpen] = useState(false);
+  const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [openMobileMenuServices, setOpenMobileMenuServices] = useState(false);
   const isPopupShown = useRef(false); // Tracks if popup has been shown
   const [popupOpen, setPopupOpen] = useAtom(popupOpenAtom); // Use popup state from Jotai
   const modalRef = useRef<null | HTMLDivElement>(null);
@@ -77,35 +78,93 @@ export default function Navbar() {
       )}
       {/* Mobile menu */}
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex h-full w-full transform flex-col items-end justify-evenly bg-opacity-70 px-5 py-64 font-cate text-2xl transition-transform lg:hidden ${open ? "translate-x-0" : "translate-x-full"} bg-black backdrop-blur-lg`}
+        className={`fixed left-0 right-0 top-0 z-50 flex h-full w-full transform flex-col items-end justify-evenly bg-opacity-70 px-5 font-cate text-2xl transition-transform lg:hidden ${openMobileMenu ? "translate-x-0" : "translate-x-full"} ${openMobileMenuServices ? "py-32" : "py-64"} py- bg-black backdrop-blur-lg`}
       >
         <Link
           href="/"
           onClick={() => {
-            setOpen(!open);
+            setOpenMobileMenu(!openMobileMenu);
             lenis?.scrollTo("#hero", { offset: -80, duration: 2 });
           }}
         >
           Home
         </Link>
-        <Link
-          href="/#services"
-          onClick={() => {
-            setOpen(!open);
-            lenis?.scrollTo("#services", { offset: -80, duration: 2 });
-          }}
-        >
-          Services
-        </Link>
+        <div className="flex flex-col items-end justify-evenly gap-4">
+          <button
+            onClick={() => {
+              setOpenMobileMenuServices(!openMobileMenuServices);
+            }}
+          >
+            Services
+          </button>
+          {openMobileMenuServices && (
+            <div className="flex flex-col items-end justify-evenly gap-2">
+              <Link
+                href="/services/auto-glass"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                Auto Glass
+              </Link>
+
+              <Link
+                href="/services/adas-calibration"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                ADAS Calibration
+              </Link>
+
+              <Link
+                href="/services/window-tinting"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                Window Tinting
+              </Link>
+
+              <Link
+                href="/services/car-wrap"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                Car Wrap
+              </Link>
+
+              <Link
+                href="/services/paint-protection-film"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                Paint Protection Film
+              </Link>
+
+              <Link
+                href="/services/ceramic-coating"
+                onClick={() => {
+                  setOpenMobileMenu(!openMobileMenu);
+                }}
+              >
+                Ceramic Coating
+              </Link>
+            </div>
+          )}
+        </div>
         <Link
           href="/#contact"
           onClick={() => {
-            setOpen(!open);
+            setOpenMobileMenu(!openMobileMenu);
             lenis?.scrollTo("#contact", { offset: -80, duration: 2 });
           }}
         >
           Contact
         </Link>
+        {/* TODO Add mobile links for Service pages */}
       </nav>
 
       {/* Desktop and mobile navbar */}
@@ -113,7 +172,7 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={() => {
-            setOpen(false);
+            setOpenMobileMenu(false);
             lenis?.scrollTo("#hero", { offset: -80 });
           }}
         >
@@ -135,15 +194,68 @@ export default function Navbar() {
           >
             Home
           </Link>
-          <Link
-            className="transition-colors hover:text-glassBlue"
-            href="/#services"
-            onClick={() => {
-              lenis?.scrollTo("#services", { offset: -80 });
-            }}
-          >
-            Services
-          </Link>
+
+          <div className="group relative">
+            <Link
+              className="transition-colors hover:text-glassBlue"
+              href="/#services"
+              onClick={() => {
+                lenis?.scrollTo("#services", { offset: -80 });
+              }}
+            >
+              Services
+            </Link>
+            <ul className="absolute -left-1/2 top-full hidden w-56 flex-col gap-2 rounded-md bg-black p-2 pt-6 text-white shadow-lg group-hover:flex">
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/auto-glass"
+                >
+                  Auto Glass
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/adas-calibration"
+                >
+                  ADAS Calibration
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/window-tinting"
+                >
+                  Window Tinting
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/car-wrap"
+                >
+                  Car Wrap
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/paint-protection-film"
+                >
+                  Paint Protection Film
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="block px-4 py-2 hover:text-glassBlue"
+                  href="/services/ceramic-coating"
+                >
+                  Ceramic Coating
+                </Link>
+              </li>
+            </ul>
+          </div>
           {/* <Link className="hover:text-glassBlue transition-colors" href="/gallery">
             Gallery
           </Link> */}
@@ -163,7 +275,10 @@ export default function Navbar() {
           </div>
         </div>
         {/* Mobile menu toggle button */}
-        <button className="lg:hidden" onClick={() => setOpen(!open)}>
+        <button
+          className="lg:hidden"
+          onClick={() => setOpenMobileMenu(!openMobileMenu)}
+        >
           <Image
             src="/images/menu.svg"
             alt="Menu"

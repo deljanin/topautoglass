@@ -56,7 +56,12 @@ export default function Testimonials() {
             )
           }
         >
-          <Image src="/images/arrow.svg" alt="" width={40} height={40} />
+          <Image
+            src="/images/testimonials/arrow.svg"
+            alt=""
+            width={40}
+            height={40}
+          />
         </button>
         <p className="min-h-28 w-4/5 text-wrap text-center md:w-[700px] md:text-xl">
           &ldquo;{testimonials[index].text}&rdquo;
@@ -67,7 +72,12 @@ export default function Testimonials() {
             setIndex((prevIndex) => (prevIndex + 1) % testimonials.length)
           }
         >
-          <Image src="/images/arrow.svg" alt="" width={40} height={40} />
+          <Image
+            src="/images/testimonials/arrow.svg"
+            alt=""
+            width={40}
+            height={40}
+          />
         </button>
       </div>
       <p className="text-center font-bold md:text-xl">
@@ -75,7 +85,7 @@ export default function Testimonials() {
       </p>
       <div className="absolute right-0 top-0 -z-10 h-full w-full blur-sm">
         <Image
-          src="/images/testimonials.jpg"
+          src="/images/testimonials/testimonials.jpg"
           alt=""
           fill
           objectFit="cover"

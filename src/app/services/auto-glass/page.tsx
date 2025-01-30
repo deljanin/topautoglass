@@ -1,4 +1,5 @@
 import ServiceShowcase from "@/app/components/ServiceShowcase";
+import WideTextList from "@/app/components/WideTextList";
 
 const showcase = [
   {
@@ -28,6 +29,13 @@ const showcase = [
   },
 ];
 
+const textList = [
+  "High-Quality Materials: We use premium OEM-grade glass and materials to ensure the best results for every repair or replacement. Quality matters, and at Top Auto, we know just how much.",
+  "Warranty Protection: Every service we provide is backed by appropriate warranties to give you peace of mind and added value to the services you pay for. ",
+  "Local Expertise: Houston drivers face unique challenges, from heavy traffic to unpredictable weather. Our knowledge of the local conditions and circumstances allows us to cater to your specific needs, ensuring fast, reliable service every time.",
+  "Convenience: With mobile repair options and fast turnaround times, we make it easy for you to get back on the road safely without losing unnecessary time or funds.",
+  "A team you can trust: Expertise, reliability, and affordability make Top Auto Glass the top choice for unparalleled service in Houston.",
+];
 export default function AutoGlassPage() {
   return (
     <>
@@ -36,6 +44,13 @@ export default function AutoGlassPage() {
         sectionTitle="Our Auto Glass Repair and Replacement Services"
         showcase={showcase}
         showCTA={false}
+      />
+      <WideTextList
+        sectionTitle="Why Choose Top Auto Glass?"
+        listItems={textList}
+        showCTA={true}
+        ctaTitle="Get a Free Quote Today"
+        ctaText="Don’t wait to address damaged glass - serious safety concerns deserve timely reactions. Contact us today for expert auto glass repair services in Houston! Click below to get started:"
       />
     </>
   );

@@ -1,5 +1,5 @@
 import ServiceShowcase from "@/app/components/ServiceShowcase";
-
+import WideTextList from "@/app/components/WideTextList";
 const showcase = [
   {
     title: "Custom Car Wraps",
@@ -28,6 +28,13 @@ const showcase = [
   },
 ];
 
+const textList = [
+  "Expertise and Technology: At Top Auto Glass, we combine expertise, state-of-the-art technology, and professional installation to deliver exceptional results. As one of the best car wrap providers in Houston, we’re committed to making your vision a reality.",
+  "Flawless Application: From intricate designs to flawless application, our team ensures every wrap meets the highest standards. Trust our expert car wrap services to give your vehicle a stunning, durable finish that stands out.",
+  "Advanced Techniques: Our dedication to quality and customer satisfaction sets us apart. We use advanced tools and techniques to ensure every wrap fits seamlessly, without bubbles or imperfections.",
+  "Tailored Solutions: If you’re a car enthusiast looking for a bold new look, a business owner seeking to elevate your branding, or anyone in between, Top Auto Glass is the trusted choice for vehicle wraps in Houston.",
+];
+
 export default function CarWrapPage() {
   return (
     <>
@@ -35,6 +42,11 @@ export default function CarWrapPage() {
         id="car-wrap"
         sectionTitle="Our Vehicle Wrap Services"
         showcase={showcase}
+        showCTA={false}
+      />
+      <WideTextList
+        sectionTitle="Why Choose Top Auto Glass for Vehicle Wraps in Houston?"
+        listItems={textList}
         showCTA={false}
       />
     </>

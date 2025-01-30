@@ -1,3 +1,3 @@
 export default function WindowTintingPage() {
-  return "WindowTintingPage";
+  return "tbc";
 }

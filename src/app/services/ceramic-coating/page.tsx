@@ -1,4 +1,5 @@
 import ServiceShowcase from "@/app/components/ServiceShowcase";
+import WideTextList from "@/app/components/WideTextList";
 
 const showcase = [
   {
@@ -26,6 +27,14 @@ const showcase = [
     imageUrl: "/images/showcase/ceramic-coating/ultimate-paint-protection.jpg",
   },
 ];
+
+const textList = [
+  "Enhanced Gloss and Shine: Ceramic coating boosts your vehicle’s appearance by creating a deep, reflective shine that lasts. This extra gloss gives your car a showroom-quality look that stays fresh for months.",
+  "Protection from UV Rays and Oxidation: Houston’s intense sun can cause paint to fade and oxidize over time. Ceramic coatings provide a layer of defense against harmful UV rays, helping maintain the vibrant color and shine of your vehicle’s paint.",
+  "Defense Against Dirt and Contaminants: The hydrophobic nature of the coating prevents water, dirt, and grime from sticking to your car’s surface. This means your car stays cleaner for longer, and you’ll spend less time scrubbing away stubborn stains.",
+  "Easy Cleaning: Because ceramic coatings create a smooth, non-porous surface, washing your car becomes easier. Water simply beads off the surface, carrying dirt and contaminants with it, leaving your vehicle looking fresh with minimal effort.",
+  "Scratch Resistance: While not completely scratch-proof, ceramic coatings provide an added layer of protection against minor abrasions from everyday use, keeping your car looking better for longer.",
+];
 export default function CeramicCoatingPage() {
   return (
     <>
@@ -33,6 +42,11 @@ export default function CeramicCoatingPage() {
         id="ceramic-coating"
         sectionTitle="Why Choose Top Auto Glass for Ceramic Coating in Houston?"
         showcase={showcase}
+        showCTA={false}
+      />
+      <WideTextList
+        sectionTitle="Benefits of Ceramic Coating"
+        listItems={textList}
         showCTA={false}
       />
     </>

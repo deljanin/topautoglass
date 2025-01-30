@@ -65,7 +65,7 @@ export default function Navbar() {
               }}
               className="mt-5 cursor-pointer text-xl"
             >
-              <CTA text="Get a free quote" type="button" width={undefined} />
+              <CTA text="Get a free quote" type="button" />
             </div>
             <div
               className="absolute right-0 top-0 m-3 size-6 cursor-pointer bg-[#252525]"
@@ -205,7 +205,7 @@ export default function Navbar() {
             >
               Services
             </Link>
-            <ul className="absolute -left-1/2 top-full hidden w-56 flex-col gap-2 rounded-md bg-black p-2 pt-6 text-white shadow-lg group-hover:flex">
+            <ul className="absolute -left-1/2 top-full hidden w-56 flex-col gap-2 rounded-md bg-black p-2 pt-6 text-white shadow-[0_0_20px_5px_rgba(0,0,0,0.5)] group-hover:flex">
               <li>
                 <Link
                   className="block px-4 py-2 hover:text-glassBlue"

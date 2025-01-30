@@ -1,7 +1,7 @@
 interface CTAProps {
   text: string;
   type: "submit" | "reset" | "button" | undefined;
-  width: string | undefined;
+  width?: string;
 }
 export default function CTA({ text, type, width }: CTAProps) {
   return (

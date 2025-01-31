@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ReactElement } from "react";
 import CTA from "./CTA";
 import Link from "next/link";

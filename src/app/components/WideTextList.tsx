@@ -25,10 +25,10 @@ export default function WideTextList({
         className={`${showCTA && "mb-10 lg:mb-20"} list-disc px-5 text-justify sm:text-xl xl:w-3/4`}
       >
         {listItems.map((item) => {
-          let [boldText, regularText] = item.split(":");
+          const [boldText, regularText] = item.split(":");
 
           return (
-            <li className="py-3">
+            <li key={item} className="py-3">
               <b>{boldText}:</b> {regularText}
             </li>
           );

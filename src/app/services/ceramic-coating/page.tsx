@@ -1,7 +1,7 @@
+import GradientImage from "@/app/components/GradientImage";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
-import Link from "next/link";
 
 const showcase = [
   {
@@ -50,6 +50,24 @@ export default function CeramicCoatingPage() {
         sectionTitle="Benefits of Ceramic Coating"
         listItems={textList}
         showCTA={false}
+      />
+      <GradientImage
+        sectionTitle="Get a Free Quote Today"
+        imagePath="/images/gradient-image/ceramic-coating.jpg"
+        ctaLink="/#contact?service=ceramic-coating"
+        description={
+          <>
+            Are you ready to give your car the protection it deserves? Contact
+            Top Auto Glass today for a free quote on our expert ceramic coating
+            services. We’ll guide you through the process, answer any questions
+            you have, and ensure your vehicle gets the top-notch care it
+            deserves.
+            <br />
+            <br />
+            Don’t wait—book your appointment today and enjoy a cleaner, shinier,
+            and better-protected vehicle tomorrow!
+          </>
+        }
       />
       <LearnMore
         sectionTitle="Learn More About Ceramic Coating in Houston, TX"

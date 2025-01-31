@@ -1,4 +1,5 @@
 import CTA from "@/app/components/CTA";
+import GradientImage from "@/app/components/GradientImage";
 import LearnMore from "@/app/components/LearnMore";
 import Link from "next/link";
 
@@ -54,6 +55,23 @@ export default function WindowTintingPage() {
           <CTA text="Contact Us Today" type="button" />
         </div>
       </section>
+      <GradientImage
+        sectionTitle="Get a Free Quote Today"
+        imagePath="/images/gradient-image/window-tinting.jpg"
+        ctaLink="/#contact?service=window-tinting"
+        description={
+          <>
+            Ready to upgrade your vehicle with professional window tinting?
+            Contact Top Auto Glass today for a free quote and discover why we’re
+            the top choice for window tinting services in Houston.
+            <br />
+            <br />
+            Let us enhance your driving experience with our expert solutions
+            that combine style, comfort, and functionality. Call us now or visit
+            our shop to get started!
+          </>
+        }
+      />
       <LearnMore
         sectionTitle="Learn More About Window Tinting in Houston, TX"
         imagePath="/images/learn-more/window-tinting.jpg"

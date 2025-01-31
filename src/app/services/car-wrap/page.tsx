@@ -1,3 +1,4 @@
+import GradientImage from "@/app/components/GradientImage";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
@@ -49,6 +50,22 @@ export default function CarWrapPage() {
         sectionTitle="Why Choose Top Auto Glass for Vehicle Wraps in Houston?"
         listItems={textList}
         showCTA={false}
+      />
+      <GradientImage
+        sectionTitle="Get a Free Quote Today"
+        imagePath="/images/gradient-image/car-wrap.jpg"
+        ctaLink="/#contact?service=car-wrap"
+        description={
+          <>
+            Ready to transform your vehicle with a custom wrap? Call us today to
+            get a free quote and start your project.
+            <br />
+            <br />
+            Whether you’re looking for auto glass repair services in Houston or
+            the best custom vehicle wraps in town, Top Auto Glass is your
+            trusted partner for quality and innovation.
+          </>
+        }
       />
       <LearnMore
         sectionTitle="Learn More About Vehicle Wraps in Houston, TX"

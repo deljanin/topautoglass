@@ -1,5 +1,4 @@
 "use client";
-import services from "../data/data";
 import Link from "next/link";
 import CTA from "../components/CTA";
 import Image from "next/image";

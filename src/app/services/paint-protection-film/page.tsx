@@ -1,3 +1,4 @@
+import GradientImage from "@/app/components/GradientImage";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
@@ -52,6 +53,25 @@ export default function PpfPage() {
         sectionTitle="Benefits of Paint Protection Film"
         listItems={textList}
         showCTA={false}
+      />
+      <GradientImage
+        sectionTitle="Why Choose Top Auto Glass for PPF in Houston?"
+        imagePath="/images/gradient-image/paint-protection-film.jpg"
+        ctaLink="/#contact?service=paint-protection-film"
+        description={
+          <>
+            When it comes to paint protection film in Houston, you need a
+            provider you can trust. Top Auto Glass offers professional
+            installation, top-tier materials, and a commitment to customer
+            satisfaction.
+            <br />
+            <br />
+            Our skilled team uses the highest quality PPF products to provide
+            you with long-lasting protection and a perfect finish. Whether
+            you’re looking for full coverage or just need a clear bra
+            installation, we’re here to help.
+          </>
+        }
       />
       <LearnMore
         sectionTitle="Learn More About Premium Paint Protection Film in Houston, TX"

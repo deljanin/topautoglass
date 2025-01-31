@@ -1,5 +1,7 @@
+import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import Link from "next/link";
 const showcase = [
   {
     title: "Full Vehicle Coverage",
@@ -50,6 +52,56 @@ export default function PpfPage() {
         sectionTitle="Benefits of Paint Protection Film"
         listItems={textList}
         showCTA={false}
+      />
+      <LearnMore
+        sectionTitle="Learn More About Premium Paint Protection Film in Houston, TX"
+        imagePath="/images/learn-more/paint-protection-film.jpg"
+        ctaLink="/#contact?service=paint-protection-film"
+        description={
+          <>
+            Advanced Driver Assistance Systems (ADAS) are essential for modern
+            vehicle safety, relying on cameras, sensors, and radar to keep you
+            and your passengers secure. After a windshield replacement or in the
+            event of sensor malfunctions, precise calibration is critical to
+            ensure these systems function as intended.
+            <br />
+            <br />
+            At Top Auto Glass in Houston, we specialize in ADAS calibration,
+            using advanced tools and techniques to adjust your vehicle’s systems
+            to exact factory standards. Whether it’s camera realignment, radar
+            calibration, or diagnostics, our highly trained technicians ensure
+            your car’s safety features perform flawlessly.
+            <br />
+            <br />
+            Beyond ADAS calibration, we’re proud to offer a full suite of
+            services to enhance and protect your vehicle, including{" "}
+            <Link href="/services/auto-glass">
+              <u>auto glass repair</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/window-tinting">
+              <u>window tinting</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/ceramic-coating">
+              <u>ceramic coating</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/paint-protection-film">
+              <u>paint protection film (PPF)</u>
+            </Link>
+            , and{" "}
+            <Link href="/services/car-wrap">
+              <u>car wrap</u>
+            </Link>
+            . With Top Auto Glass, you get comprehensive care for your vehicle
+            under one roof, backed by trusted expertise and a commitment to
+            quality.
+            <br />
+            <br />
+            Contact us today to get a free quote or schedule an appointment.
+          </>
+        }
       />
     </>
   );

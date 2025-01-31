@@ -1,5 +1,7 @@
+import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import Link from "next/link";
 
 const showcase = [
   {
@@ -51,6 +53,52 @@ export default function AutoGlassPage() {
         showCTA={true}
         ctaTitle="Get a Free Quote Today"
         ctaText="Don’t wait to address damaged glass - serious safety concerns deserve timely reactions. Contact us today for expert auto glass repair services in Houston! Click below to get started:"
+      />
+      <LearnMore
+        sectionTitle="Learn More About Auto Glass in Houston, TX"
+        imagePath="/images/learn-more/auto-glass.jpg"
+        ctaLink="/#contact?service=auto-glass"
+        description={
+          <>
+            Your vehicle deserves the best care, and at Top Auto Glass, we’re
+            here to deliver. Whether it’s repairing a small chip, replacing a
+            shattered windshield, or enhancing your car’s appearance, we provide
+            services designed to keep your vehicle safe, functional, and looking
+            great—all in one convenient visit. <br /> <br />
+            Don’t let damaged auto glass slow you down! From precision repairs
+            to specialized fixes for advanced vehicle systems, our expert team
+            has you covered. In addition to auto glass services, we offer{" "}
+            <Link href="/services/window-tinting">
+              <u>window tinting</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/adas-calibration">
+              <u>ADAS calibration</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/ceramic-coating">
+              <u>ceramic coating</u>
+            </Link>
+            ,{" "}
+            <Link href="/services/paint-protection-film">
+              <u>paint protection film (PPF) application</u>
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/car-wrap">
+              <u>car wrapping</u>
+            </Link>
+            , making us your one-stop shop for vehicle enhancements in Houston.{" "}
+            <br /> <br />
+            At Top Auto Glass, we take pride in being Houston’s trusted provider
+            for professional auto glass repair and replacement services. With
+            years of expertise, a reputation for quality, and modern techniques
+            tailored to today’s vehicles, we ensure a perfect fit and
+            long-lasting results. <br /> <br />
+            We’re more than just a repair shop—we’re your partner in keeping
+            your vehicle safe and secure. Explore our full range of services and
+            give us a call today to get started!
+          </>
+        }
       />
     </>
   );

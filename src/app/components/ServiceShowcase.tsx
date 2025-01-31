@@ -91,8 +91,8 @@ export default function ServiceShowcase({
                       src={service.imageUrl}
                       alt={service.title}
                       fill={true}
-                      className="rounded-b-md md:rounded-l-none md:rounded-r-md"
-                      objectFit="cover"
+                      // placeholder="blur"
+                      className="absolute inset-0 rounded-b-md object-cover md:rounded-l-none md:rounded-r-md"
                     />
                   </div>
                 </div>
@@ -110,8 +110,8 @@ export default function ServiceShowcase({
                     src={service.imageUrl}
                     alt={service.title}
                     fill={true}
-                    className="rounded-b-md md:rounded-l-md md:rounded-r-none"
-                    objectFit="cover"
+                    // placeholder="blur"
+                    className="absolute inset-0 rounded-b-md object-cover md:rounded-l-md md:rounded-r-none"
                   />
                 </div>
                 <div className="flex flex-col justify-center gap-2 px-8 py-8 md:w-1/2 md:items-end lg:px-16 lg:py-16">

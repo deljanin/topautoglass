@@ -1,3 +1,4 @@
+import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
 const showcase = [
@@ -48,6 +49,30 @@ export default function CarWrapPage() {
         sectionTitle="Why Choose Top Auto Glass for Vehicle Wraps in Houston?"
         listItems={textList}
         showCTA={false}
+      />
+      <LearnMore
+        sectionTitle="Learn More About Vehicle Wraps in Houston, TX"
+        imagePath="/images/learn-more/car-wrap.jpg"
+        ctaLink="/#contact?service=car-wrap"
+        description={
+          <>
+            Vehicle wraps are a versatile and cost-effective solution for
+            showcasing your style, protecting your car’s paint, or advertising
+            your business on the go.
+            <br />
+            <br />
+            At Top Auto Glass, we pair expert craftsmanship with premium
+            materials to deliver custom wraps that transform your vehicle.
+            Whether it’s experimenting with bold colors and textures or creating
+            eye-catching designs, our vinyl wraps are designed to turn heads.
+            <br />
+            <br />
+            For business owners, commercial wraps offer a powerful way to
+            enhance branding and keep your company top-of-mind. From design to
+            flawless installation, we handle it all—so you can focus on growing
+            your business while we elevate your vehicles.
+          </>
+        }
       />
     </>
   );

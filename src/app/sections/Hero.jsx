@@ -4,6 +4,7 @@ import CTA from "../components/CTA";
 import CountUp from "../components/CountUp";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
+import heroImage from "/public/images/hero.jpg";
 
 export default function Hero() {
   const lenis = useLenis();
@@ -95,10 +96,11 @@ export default function Hero() {
         /> */}
 
         <Image
-          src="/images/hero.jpg"
+          src={heroImage}
           alt="Auto glass in Houston"
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
           priority
         />
       </div>

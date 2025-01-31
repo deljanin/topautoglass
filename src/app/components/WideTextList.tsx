@@ -17,7 +17,7 @@ export default function WideTextList({
   ctaText,
 }: Props) {
   return (
-    <div className="flex flex-col items-center px-5 py-20 sm:px-16 lg:px-32">
+    <section className="flex flex-col items-center px-5 py-20 sm:px-16 lg:px-32">
       <h2 className="pb-10 text-center font-cateItalic text-4xl sm:text-5xl md:w-2/3 lg:pb-20 xl:text-6xl">
         {sectionTitle}
       </h2>
@@ -47,6 +47,6 @@ export default function WideTextList({
           </Link>
         </div>
       )}
-    </div>
+    </section>
   );
 }

@@ -1,5 +1,7 @@
+import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import Link from "next/link";
 
 const showcase = [
   {
@@ -48,6 +50,30 @@ export default function CeramicCoatingPage() {
         sectionTitle="Benefits of Ceramic Coating"
         listItems={textList}
         showCTA={false}
+      />
+      <LearnMore
+        sectionTitle="Learn More About Ceramic Coating in Houston, TX"
+        imagePath="/images/learn-more/ceramic-coating.jpg"
+        ctaLink="/#contact?service=ceramic-coating"
+        description={
+          <>
+            Ceramic coating provides a durable layer of protection for your
+            car’s paint, guarding it against the elements and making maintenance
+            effortless.
+            <br />
+            <br />
+            At Top Auto Glass, we specialize in expert ceramic coating services
+            designed to deliver the best protection available. As trusted
+            providers of auto glass repair in Houston, we’re committed to
+            keeping your vehicle looking pristine, inside and out.
+            <br />
+            <br />
+            Not only does ceramic coating make cleaning easier, but it also
+            helps your car retain its value by maintaining its paint in top
+            condition. Discover how this advanced solution can elevate your
+            vehicle’s appearance and protection.
+          </>
+        }
       />
     </>
   );

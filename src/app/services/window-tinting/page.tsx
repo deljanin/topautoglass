@@ -1,11 +1,36 @@
 import CTA from "@/app/components/CTA";
 import GradientImage from "@/app/components/GradientImage";
+import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import Link from "next/link";
 
 export default function WindowTintingPage() {
   return (
     <>
+      <HeroVerticalGradient
+        sectionTitle={
+          <>
+            Top-Quality Window Tinting
+            <br className="hidden sm:block" /> Services in Houston, TX
+          </>
+        }
+        description={
+          <>
+            At{" "}
+            <Link href="/" className="underline">
+              Top Auto Glass
+            </Link>
+            , we specialize in delivering the best window tinting services in
+            Houston, TX. Our team’s expertise and commitment to quality ensure
+            you’ll enjoy long-lasting results that enhance both the
+            functionality and style of your vehicle.
+          </>
+        }
+        imagePath="/images/hero/hero-window-tinting.jpg"
+        ctaLink="/contact?service=window-tinting"
+        ctaText="Block the Heat"
+        marginTop="mt-20"
+      />
       <section className="flex flex-col items-center px-5 py-20 sm:px-16 lg:px-44">
         <h2 className="pb-20 text-center font-cateItalic text-4xl sm:text-5xl xl:w-2/3 xl:text-6xl">
           Why Choose Window Tinting in Houston?

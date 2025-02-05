@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import CTA from "../components/CTA";
+import CTA, { CTABlack } from "../components/CTA";
 import CountUp from "../components/CountUp";
 import Link from "next/link";
 import { useLenis } from "lenis/react";
@@ -41,9 +41,7 @@ export default function Hero() {
               lenis?.scrollTo("#contact", { offset: -80, duration: 2 });
             }}
           >
-            <button className="rounded-md border-2 border-glassBlue bg-black px-3 py-2 font-cate text-glassBlue shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-110 hover:border-white hover:text-white">
-              Get a Free Quote
-            </button>
+            <CTABlack text="Get a Free Quote" />
           </Link>
         </div>
         <div className="flex w-full cursor-default flex-wrap items-center justify-evenly gap-y-2 pt-16 xl:w-1/2 xl:justify-between xl:pt-32">

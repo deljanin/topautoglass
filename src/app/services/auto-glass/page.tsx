@@ -1,3 +1,4 @@
+import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
@@ -41,6 +42,29 @@ const textList = [
 export default function AutoGlassPage() {
   return (
     <>
+      <HeroVerticalGradient
+        sectionTitle={
+          <>
+            Expert Auto Glass Repair <br className="hidden sm:block" /> in
+            Houston, TX
+          </>
+        }
+        description={
+          <>
+            From chips to shattered windshields, we’re here to restore your
+            vehicle’s safety and appearance. Backed by years of experience and
+            over 25,000 successful replacements,{" "}
+            <b>
+              we provide fast and reliable auto glass repairs and replacements
+              in Houston.
+            </b>
+          </>
+        }
+        imagePath="/images/hero/hero-auto-glass.jpg"
+        ctaText="Fix Your Glass Now"
+        ctaLink="/#contact?service=auto-glass"
+        marginTop="mt-24"
+      />
       <ServiceShowcase
         id="auto-glass"
         sectionTitle="Our Auto Glass Repair and Replacement Services"

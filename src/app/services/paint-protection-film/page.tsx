@@ -1,4 +1,5 @@
 import GradientImage from "@/app/components/GradientImage";
+import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
@@ -43,6 +44,30 @@ const textList = [
 export default function PpfPage() {
   return (
     <>
+      <HeroVerticalGradient
+        sectionTitle={
+          <>
+            Premium Paint Protection Film <br className="hidden sm:block" />
+            in Houston, TX
+          </>
+        }
+        description={
+          <>
+            When it comes to protecting your vehicle's exterior, paint
+            protection film (PPF) is one of the most effective solutions
+            available. 
+            <br />
+            <br />
+            In a city like Houston, where weather conditions and road debris can
+            quickly take a toll on your car’s paint, investing in PPF is a smart
+            way to keep your vehicle looking new.
+          </>
+        }
+        imagePath="/images/hero/hero-paint-protection-film.jpg"
+        ctaLink="/#contact?service=paint-protection-film"
+        ctaText="Explore Options"
+        marginTop="mt-24"
+      />
       <ServiceShowcase
         id="paint-protection-film"
         sectionTitle="Our Paint Protection Film Services"

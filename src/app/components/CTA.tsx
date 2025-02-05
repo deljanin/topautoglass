@@ -13,3 +13,13 @@ export default function CTA({ text, type, width }: CTAProps) {
     </button>
   );
 }
+export function CTABlack({ text, type, width }: CTAProps) {
+  return (
+    <button
+      type={type}
+      className={` w-[${width}px] rounded-md border-2 border-glassBlue bg-black px-3 py-2 font-cate text-glassBlue shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-110 hover:border-white hover:text-white`}
+    >
+      {text}
+    </button>
+  );
+}

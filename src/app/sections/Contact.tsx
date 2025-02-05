@@ -5,7 +5,7 @@ import Image from "next/image";
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import CTA from "../components/CTA";
+import CTA, { CTABlack } from "../components/CTA";
 import { ChangeEvent } from "react";
 import Link from "next/link";
 
@@ -251,13 +251,8 @@ export default function Contact() {
             <p className="text-center">
               Or <br /> call us
             </p>
-            <a href="tel:+18327958511">
-              <button
-                type="button"
-                className="w-[200px] rounded-md border-2 border-glassBlue bg-black px-3 py-2 font-cate text-lg text-glassBlue shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] transition-all hover:scale-110 hover:border-white hover:text-white"
-              >
-                (832) 795-8511
-              </button>
+            <a href="tel:+18327958511" className="text-lg">
+              <CTABlack text="(832) 795-8511" type="button" width="200" />
             </a>
           </div>
           <Link

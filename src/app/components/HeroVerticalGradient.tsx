@@ -37,6 +37,7 @@ export default function HeroVerticalGradient({
           quality={100}
           alt={ctaText}
           className="object-cover"
+          priority
         />
         <div className="absolute bottom-0 -z-20 h-1/2 w-full shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)]"></div>
       </div>

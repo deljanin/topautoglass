@@ -34,6 +34,7 @@ export default function HeroHorizontalGradient({
           fill
           quality={100}
           className="object-cover"
+          priority
         />
       </div>
     </section>

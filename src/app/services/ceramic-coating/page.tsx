@@ -42,33 +42,6 @@ const textList = [
   "Scratch Resistance: While not completely scratch-proof, ceramic coatings provide an added layer of protection against minor abrasions from everyday use, keeping your car looking better for longer.",
 ];
 
-const textSection = [
-  <>
-    Ceramic coating is a liquid polymer applied to a vehicle’s exterior, where
-    it chemically bonds with the paint, creating a long-lasting protective
-    layer. Along with{" "}
-    <Link href="/services/window-tinting">
-      <u>window tinting</u>
-    </Link>{" "}
-    and{" "}
-    <Link href="/services/car-wrap">
-      <u>vehicle wraps</u>
-    </Link>{" "}
-    , it adds to your vehicle’s overall appearance.
-  </>,
-  <>
-    This automotive ceramic coating acts as a shield, guarding your car’s
-    surface against water, dirt, contaminants, and even minor scratches. The
-    coating’s hydrophobic properties ensure that water beads off, making it
-    easier to wash and maintain your vehicle.
-  </>,
-  <>
-    With auto ceramic coating, you’re protecting the integrity of your vehicle’s
-    paint, as well as enhancing its overall appearance with a glossy, sleek
-    finish. Unlike traditional wax, ceramic coating offers superior durability,
-    lasting for months or even years with proper maintenance.
-  </>,
-];
 export default function CeramicCoatingPage() {
   return (
     <>
@@ -93,7 +66,33 @@ export default function CeramicCoatingPage() {
       />
       <WideTextSection
         sectionTitle={<>What is Ceramic Coating?</>}
-        description={textSection}
+        description={
+          <>
+            Ceramic coating is a liquid polymer applied to a vehicle’s exterior,
+            where it chemically bonds with the paint, creating a long-lasting
+            protective layer. Along with{" "}
+            <Link href="/services/window-tinting">
+              <u>window tinting</u>
+            </Link>{" "}
+            and{" "}
+            <Link href="/services/car-wrap">
+              <u>vehicle wraps</u>
+            </Link>{" "}
+            , it adds to your vehicle’s overall appearance. <br />
+            <br />
+            description This automotive ceramic coating acts as a shield,
+            guarding your car’s surface against water, dirt, contaminants, and
+            even minor scratches. The coating’s hydrophobic properties ensure
+            that water beads off, making it easier to wash and maintain your
+            vehicle. <br />
+            <br />
+            description With auto ceramic coating, you’re protecting the
+            integrity of your vehicle’s paint, as well as enhancing its overall
+            appearance with a glossy, sleek finish. Unlike traditional wax,
+            ceramic coating offers superior durability, lasting for months or
+            even years with proper maintenance.
+          </>
+        }
       />
       <ImageSection
         imagePath="/images/image-section/ceramic-coating.jpg"

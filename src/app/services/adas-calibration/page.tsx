@@ -17,26 +17,7 @@ const textList = [
   "Convenience and Value: We provide competitive pricing and fast turnaround times, minimizing disruptions to your schedule while ensuring top-notch results.",
   "Transparency and Trust: At Top Auto Glass, we pride ourselves on transparency and reliability. We explain the calibration process in detail, answer your questions, and provide accurate quotes for every service.",
 ];
-const textSection = [
-  <>
-    ADAS calibration involves resetting your vehicle’s sensors and cameras to
-    factory specifications. These systems are designed to provide real-time data
-    that assists with critical safety functions, including collision prevention,
-    blind-spot monitoring, and parking assistance.
-  </>,
-  <>
-    Features like lane-keeping assistance, adaptive cruise control, and
-    emergency braking rely on sensors and cameras to function accurately.
-    However, even slight misalignments can result in significant safety risks,
-    compromising your ability to navigate the road safely.
-  </>,
-  <>
-    When a system is miscalibrated, its accuracy is compromised. This can result
-    in false warnings, failure to recognize hazards or even complete system
-    malfunctions. Proper recalibration ensures your vehicle operates as
-    intended, keeping you safe on every journey.
-  </>,
-];
+
 export default function AdasCalibrationPage() {
   return (
     <>
@@ -65,7 +46,28 @@ export default function AdasCalibrationPage() {
       />
       <WideTextSection
         sectionTitle={<>What is ADAS Calibration?</>}
-        description={textSection}
+        description={
+          <>
+            ADAS calibration involves resetting your vehicle’s sensors and
+            cameras to factory specifications. These systems are designed to
+            provide real-time data that assists with critical safety functions,
+            including collision prevention, blind-spot monitoring, and parking
+            assistance.
+            <br />
+            <br />
+            Features like lane-keeping assistance, adaptive cruise control, and
+            emergency braking rely on sensors and cameras to function
+            accurately. However, even slight misalignments can result in
+            significant safety risks, compromising your ability to navigate the
+            road safely.
+            <br />
+            <br />
+            When a system is miscalibrated, its accuracy is compromised. This
+            can result in false warnings, failure to recognize hazards or even
+            complete system malfunctions. Proper recalibration ensures your
+            vehicle operates as intended, keeping you safe on every journey.
+          </>
+        }
       />
       <ImageSection
         imagePath="/images/image-section/adas-calibration.jpg"

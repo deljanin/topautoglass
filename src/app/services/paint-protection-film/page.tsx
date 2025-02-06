@@ -3,6 +3,7 @@ import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import Image from "next/image";
 import Link from "next/link";
 const showcase = [
   {
@@ -53,7 +54,7 @@ export default function PpfPage() {
         }
         description={
           <>
-            When it comes to protecting your vehicle's exterior, paint
+            When it comes to protecting your vehicle’s exterior, paint
             protection film (PPF) is one of the most effective solutions
             available. 
             <br />
@@ -68,15 +69,48 @@ export default function PpfPage() {
         ctaText="Explore Options"
         marginTop="mt-24"
       />
+      <section className="flex flex-col items-center gap-14 px-5 py-20 text-center sm:px-16 lg:px-32 lg:text-left xl:px-64 2xl:relative 2xl:items-start">
+        <h2 className="text-center font-cateItalic text-4xl sm:text-5xl xl:text-6xl xl:leading-tight 2xl:text-left">
+          What is Paint Protection <br className="hidden sm:block" />
+          Film (PPF)?
+        </h2>
+        <p className="text-justify sm:w-3/4 sm:text-xl 2xl:w-2/5 2xl:text-left">
+          Paint protection film (PPF) is a clear, durable material designed to
+          safeguard your vehicle’s paintwork. Applied to the exterior of your
+          car, it acts as a protective barrier against scratches, road debris,
+          and even the harmful effects of UV rays.
+          <br />
+          <br />
+          Commonly referred to as PPF film, PPF wrap, or automotive paint
+          protection film, this product{" "}
+          <b>
+            offers exceptional coverage and keeps your car looking brand new for
+            longer.
+          </b>
+          <br />
+          <br />
+          Its advanced design ensures it won’t affect the color or appearance of
+          your vehicle, making it a discreet but highly effective protective
+          solution.
+        </p>
+        <div className="relative h-[500px] w-full lg:w-[800px] 2xl:absolute 2xl:right-16 2xl:top-40 3xl:right-32">
+          <Image
+            src="/images/paint-protection-film/paint-protection-film.jpg"
+            alt="Paint Protection Film"
+            fill
+            className="absolute right-0 top-0 -z-10 rounded-md object-cover shadow-[0_0_15px_2px_rgba(0,0,0,0.5)]"
+          />
+        </div>
+      </section>
+      <WideTextList
+        sectionTitle="Benefits of Paint Protection Film"
+        listItems={textList}
+        showCTA={false}
+      />
       <ServiceShowcase
         id="paint-protection-film"
         sectionTitle="Our Paint Protection Film Services"
         showcase={showcase}
-        showCTA={false}
-      />
-      <WideTextList
-        sectionTitle="Benefits of Paint Protection Film"
-        listItems={textList}
         showCTA={false}
       />
       <GradientImage
@@ -104,47 +138,37 @@ export default function PpfPage() {
         ctaLink="/#contact?service=paint-protection-film"
         description={
           <>
-            Advanced Driver Assistance Systems (ADAS) are essential for modern
-            vehicle safety, relying on cameras, sensors, and radar to keep you
-            and your passengers secure. After a windshield replacement or in the
-            event of sensor malfunctions, precise calibration is critical to
-            ensure these systems function as intended.
-            <br />
-            <br />
-            At Top Auto Glass in Houston, we specialize in ADAS calibration,
-            using advanced tools and techniques to adjust your vehicle’s systems
-            to exact factory standards. Whether it’s camera realignment, radar
-            calibration, or diagnostics, our highly trained technicians ensure
-            your car’s safety features perform flawlessly.
-            <br />
-            <br />
-            Beyond ADAS calibration, we’re proud to offer a full suite of
-            services to enhance and protect your vehicle, including{" "}
-            <Link href="/services/auto-glass">
-              <u>auto glass repair</u>
+            Paint protection film (PPF) is a game changer if you’re looking to
+            protect your vehicle’s exterior. This advanced technology acts as a
+            shield, protecting your vehicle from everyday wear and tear. PPF,
+            along with{" "}
+            <Link href="/services/ceramic-coating">
+              <u>ceramic coating</u>
             </Link>
             ,{" "}
             <Link href="/services/window-tinting">
               <u>window tinting</u>
             </Link>
-            ,{" "}
-            <Link href="/services/ceramic-coating">
-              <u>ceramic coating</u>
-            </Link>
-            ,{" "}
-            <Link href="/services/paint-protection-film">
-              <u>paint protection film (PPF)</u>
-            </Link>
-            , and{" "}
+            , or{" "}
             <Link href="/services/car-wrap">
-              <u>car wrap</u>
-            </Link>
-            . With Top Auto Glass, you get comprehensive care for your vehicle
-            under one roof, backed by trusted expertise and a commitment to
-            quality.
+              <u>vehicle wraps</u>
+            </Link>{" "}
+            is the perfect way to add character to your vehicle while adding on
+            to its safety and security.    <br />
             <br />
+            In Houston, where the weather and road conditions can be tough on
+            car exteriors, investing in PPF is an excellent choice.    <br />
             <br />
-            Contact us today to get a free quote or schedule an appointment.
+            At Top Auto Glass, we specialize in applying premium paint
+            protection film to keep your car looking its best. Our expertise and
+            high-quality products ensure your vehicle stays protected against
+            scratches, chips, and fading, so you can drive with confidence and
+            security.   <br />
+            <br />
+            Book today for a free quote and take the first step towards
+            protecting your vehicle with premium paint protection film. Our
+            experts are ready to answer all your questions and get your car
+            looking like new again. 
           </>
         }
       />

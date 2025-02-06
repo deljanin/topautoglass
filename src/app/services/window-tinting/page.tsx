@@ -1,9 +1,33 @@
+import Card from "@/app/components/Card";
 import CTA from "@/app/components/CTA";
 import GradientImage from "@/app/components/GradientImage";
 import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
+import ImageSection from "@/app/components/ImageSection";
 import LearnMore from "@/app/components/LearnMore";
 import Link from "next/link";
 
+const expectations = [
+  {
+    title: "Premium Materials",
+    description:
+      "We use only high-quality window films that are durable, fade-resistant, and backed by warranties.",
+  },
+  {
+    title: "Expert Installation",
+    description:
+      "Our technicians have the skills and experience to ensure a seamless finish, free from bubbles or imperfections.",
+  },
+  {
+    title: "Personalized Service",
+    description:
+      "We understand that every customer’s needs are unique. That’s why we tailor our services to match your specific goals, whether it’s UV protection, privacy, or enhancing your car’s appearance.",
+  },
+  {
+    title: "Competitive Pricing",
+    description:
+      "Quality doesn’t have to come with a hefty price tag. We offer affordable rates without compromising on excellence.",
+  },
+];
 export default function WindowTintingPage() {
   return (
     <>
@@ -32,8 +56,9 @@ export default function WindowTintingPage() {
         marginTop="mt-20"
       />
       <section className="flex flex-col items-center px-5 py-20 sm:px-16 lg:px-44">
-        <h2 className="pb-20 text-center font-cateItalic text-4xl sm:text-5xl xl:w-2/3 xl:text-6xl">
-          Why Choose Window Tinting in Houston?
+        <h2 className="pb-20 text-center font-cateItalic text-4xl sm:text-5xl xl:w-2/3 xl:text-6xl xl:leading-tight">
+          Why Choose Window <br className="hidden sm:block" /> Tinting in
+          Houston?
         </h2>
         <div className="mb-10 flex flex-col items-center">
           <p className="text-justify sm:text-xl xl:w-7/12">
@@ -79,6 +104,35 @@ export default function WindowTintingPage() {
           </p>
           <CTA text="Contact Us Today" type="button" />
         </div>
+      </section>
+      <ImageSection
+        imagePath="/images/image-section/window-tinting.jpg"
+        altText="Window tinting on a car in Top Auto Glass workshop."
+      />
+
+      <section className="flex flex-col items-center gap-10 px-5 py-20">
+        <h1 className="text-center font-cateItalic text-4xl sm:text-5xl xl:text-6xl">
+          Window Tinting Process
+        </h1>
+        <p className="sm:2/3 text-center sm:text-xl md:w-1/2 xl:w-2/5">
+          Our window tinting process is designed to deliver precision,
+          efficiency, and quality every step of the way. Here’s what you can
+          expect:
+        </p>
+        <div className="flex flex-wrap items-center justify-center gap-10">
+          {expectations.map((expectation) => (
+            <Card
+              key={expectation.title}
+              title={expectation.title}
+              description={expectation.description}
+            />
+          ))}
+        </div>
+        <p className="sm:2/3 text-center sm:text-xl md:w-1/2 xl:w-1/3">
+          As a trusted tint shop in Houston, TX, we’re dedicated to delivering
+          the best window tinting solutions. From consultation to installation,
+          we ensure a smooth process that prioritizes your satisfaction.
+        </p>
       </section>
       <GradientImage
         sectionTitle="Get a Free Quote Today"

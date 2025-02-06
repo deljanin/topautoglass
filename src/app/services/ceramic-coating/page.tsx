@@ -1,7 +1,11 @@
 import GradientImage from "@/app/components/GradientImage";
+import HeroHorizontalGradient from "@/app/components/HeroHorizontalGradient";
+import ImageSection from "@/app/components/ImageSection";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import WideTextSection from "@/app/components/WideTextSection";
+import Link from "next/link";
 
 const showcase = [
   {
@@ -37,18 +41,74 @@ const textList = [
   "Easy Cleaning: Because ceramic coatings create a smooth, non-porous surface, washing your car becomes easier. Water simply beads off the surface, carrying dirt and contaminants with it, leaving your vehicle looking fresh with minimal effort.",
   "Scratch Resistance: While not completely scratch-proof, ceramic coatings provide an added layer of protection against minor abrasions from everyday use, keeping your car looking better for longer.",
 ];
+
+const textSection = [
+  <>
+    Ceramic coating is a liquid polymer applied to a vehicle’s exterior, where
+    it chemically bonds with the paint, creating a long-lasting protective
+    layer. Along with{" "}
+    <Link href="/services/window-tinting">
+      <u>window tinting</u>
+    </Link>{" "}
+    and{" "}
+    <Link href="/services/car-wrap">
+      <u>vehicle wraps</u>
+    </Link>{" "}
+    , it adds to your vehicle’s overall appearance.
+  </>,
+  <>
+    This automotive ceramic coating acts as a shield, guarding your car’s
+    surface against water, dirt, contaminants, and even minor scratches. The
+    coating’s hydrophobic properties ensure that water beads off, making it
+    easier to wash and maintain your vehicle.
+  </>,
+  <>
+    With auto ceramic coating, you’re protecting the integrity of your vehicle’s
+    paint, as well as enhancing its overall appearance with a glossy, sleek
+    finish. Unlike traditional wax, ceramic coating offers superior durability,
+    lasting for months or even years with proper maintenance.
+  </>,
+];
 export default function CeramicCoatingPage() {
   return (
     <>
+      <HeroHorizontalGradient
+        sectionTitle={
+          <>
+            Expert Ceramic Coating
+            <br className="hidden md:block" /> in Houston, TX
+          </>
+        }
+        description={
+          <>
+            When it comes to protecting your vehicle’s exterior and enhancing
+            its shine, ceramic coating is a game changer. <br />
+            Let’s get into all the details of ceramic coatings for cars and see
+            why exactly it’s the best choice for your vehicle’s safety.
+          </>
+        }
+        imagePath="/images/hero/hero-ceramic-coating.jpg"
+        ctaLink="/#contact?service=hero-ceramic-coating"
+        ctaText="Discover the Shine"
+      />
+      <WideTextSection
+        sectionTitle={<>What is Ceramic Coating?</>}
+        description={textSection}
+      />
+      <ImageSection
+        imagePath="/images/image-section/ceramic-coating.jpg"
+        altText="Shining sports car with ceramic coating applied to by Top Auto Glass"
+      />
+
+      <WideTextList
+        sectionTitle="Benefits of Ceramic Coating"
+        listItems={textList}
+        showCTA={false}
+      />
       <ServiceShowcase
         id="ceramic-coating"
         sectionTitle="Why Choose Top Auto Glass for Ceramic Coating in Houston?"
         showcase={showcase}
-        showCTA={false}
-      />
-      <WideTextList
-        sectionTitle="Benefits of Ceramic Coating"
-        listItems={textList}
         showCTA={false}
       />
       <GradientImage

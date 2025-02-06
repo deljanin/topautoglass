@@ -28,7 +28,7 @@ export default function ServiceShowcase({
 
   return (
     <section id={id} className="flex scroll-mt-20 flex-col items-center py-20">
-      <h2 className="pb-20 text-center font-cateItalic text-4xl sm:text-5xl md:w-2/3 xl:w-1/2 xl:text-6xl">
+      <h2 className="pb-20 text-center font-cateItalic text-4xl sm:text-5xl md:w-2/3 xl:w-1/2 xl:text-6xl xl:leading-tight">
         {sectionTitle}
       </h2>
       <div className="flex flex-col items-center justify-center gap-10 px-5 lg:px-32 xl:px-64">

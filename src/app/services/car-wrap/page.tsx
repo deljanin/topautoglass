@@ -1,7 +1,11 @@
+import Card from "@/app/components/Card";
 import GradientImage from "@/app/components/GradientImage";
+import HeroHorizontalGradient from "@/app/components/HeroHorizontalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import Image from "next/image";
+import Link from "next/link";
 const showcase = [
   {
     title: "Custom Car Wraps",
@@ -37,9 +41,95 @@ const textList = [
   "Tailored Solutions: If you’re a car enthusiast looking for a bold new look, a business owner seeking to elevate your branding, or anyone in between, Top Auto Glass is the trusted choice for vehicle wraps in Houston.",
 ];
 
+const wrapTypes = [
+  {
+    title: "Full Wraps",
+    description:
+      "Full wraps allow you to completely change your vehicle’s color or design, offering a striking transformation.",
+  },
+  {
+    title: "Partial Wraps",
+    description:
+      "Partial wraps are perfect for adding personalized touches without covering the entire surface, making them a budget-friendly option.",
+  },
+  {
+    title: "Accent wraps",
+    description:
+      "Accent wraps, on the other hand, provide subtle yet impactful upgrades by focusing on areas like the roof, hood, or mirrors.",
+  },
+];
 export default function CarWrapPage() {
   return (
     <>
+      <HeroHorizontalGradient
+        sectionTitle={
+          <>
+            Custom Vehicle Wraps <br className="hidden md:block" />
+            in Houston, TX
+          </>
+        }
+        description={
+          <>
+            When it comes to upgrading your vehicle’s look and functionality,
+            custom vehicle wraps are an unbeatable choice. <br /> Let’s dive
+            into all things vehicle wraps and why you should choose Top Auto
+            Glass to do the job for you!
+          </>
+        }
+        imagePath="/images/hero/hero-car-wrap.jpg"
+        ctaLink="/#contact?service=adas-calibration"
+        ctaText="See the Difference"
+      />
+      <section className="relative flex w-full flex-col items-center gap-14 py-20 lg:items-start">
+        <h2 className="px-5 text-center font-cateItalic text-4xl sm:text-5xl lg:px-32 lg:text-left xl:px-64 xl:text-6xl">
+          What are Vehicle Wraps?
+        </h2>
+        <div className="flex flex-col items-center gap-10 px-5 lg:flex-row lg:justify-between lg:pl-32 lg:pr-0 xl:pl-64">
+          <p className="text-justify sm:w-3/4 sm:text-xl lg:text-left 2xl:w-1/2">
+            Vehicle wraps are a flexible and durable way to customize your car’s
+            appearance. These wraps consist of high-quality vinyl materials
+            applied to your vehicle’s exterior, creating a new look without
+            permanent changes.
+            <br />
+            <br />
+            If you like avoiding permanent changes, you should also look into{" "}
+            <Link href="/services/window-tinting">
+              <u>window tinting</u>
+            </Link>{" "}
+            which adds both character and safety to your car, or{" "}
+            <Link href="/services/paint-protection-film">
+              <u>PPF film</u>
+            </Link>{" "}
+            which is a great option for paint preservation. 
+            <br />
+            <br />
+            You can choose from various options, including full wraps that cover
+            the entire vehicle, partial wraps for specific sections, or accent
+            wraps to enhance certain features.
+            <br />
+            <br />
+            With so many options available, there’s a wrap to suit every
+            preference and purpose.
+          </p>
+          <div className="relative h-[400px] w-full lg:h-[650px]">
+            <Image
+              src="/images/car-wrap/vehicle-wrap.jpg"
+              alt="Car Wrap"
+              fill
+              className="right-0 top-0 -z-10 rounded-md object-cover shadow-[0_0_15px_2px_rgba(0,0,0,0.5)] lg:rounded-l-md lg:rounded-r-none"
+            />
+          </div>
+        </div>
+        <div className="flex w-full flex-wrap items-center justify-center gap-5 px-5 2xl:gap-16">
+          {wrapTypes.map((wrap, index) => (
+            <Card
+              key={index}
+              title={wrap.title}
+              description={wrap.description}
+            />
+          ))}
+        </div>
+      </section>
       <ServiceShowcase
         id="car-wrap"
         sectionTitle="Our Vehicle Wrap Services"

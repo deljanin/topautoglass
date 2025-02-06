@@ -76,7 +76,7 @@ export default function AutoGlassPage() {
         listItems={textList}
         showCTA={true}
         ctaTitle="Get a Free Quote Today"
-        ctaText="Don’t wait to address damaged glass - serious safety concerns deserve timely reactions. Contact us today for expert auto glass repair services in Houston! Click below to get started:"
+        ctaDescription="Don’t wait to address damaged glass - serious safety concerns deserve timely reactions. Contact us today for expert auto glass repair services in Houston! Click below to get started:"
       />
       <LearnMore
         sectionTitle="Learn More About Auto Glass in Houston, TX"

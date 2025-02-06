@@ -6,7 +6,7 @@ interface Props {
   listItems: string[];
   showCTA?: boolean;
   ctaTitle?: string;
-  ctaText?: string;
+  ctaDescription?: string;
 }
 
 export default function WideTextList({
@@ -14,11 +14,11 @@ export default function WideTextList({
   listItems,
   showCTA,
   ctaTitle,
-  ctaText,
+  ctaDescription,
 }: Props) {
   return (
     <section className="flex flex-col items-center px-5 py-20 sm:px-16 lg:px-32">
-      <h2 className="pb-10 text-center font-cateItalic text-4xl sm:text-5xl md:w-2/3 lg:pb-20 xl:text-6xl">
+      <h2 className="pb-10 text-center font-cateItalic text-4xl sm:text-5xl md:w-2/3 lg:pb-20 xl:text-6xl xl:leading-tight">
         {sectionTitle}
       </h2>
       <ul
@@ -41,7 +41,7 @@ export default function WideTextList({
               {ctaTitle}
             </h3>
           )}
-          <p className="text-center sm:text-xl xl:w-7/12">{ctaText}</p>
+          <p className="text-center sm:text-xl xl:w-7/12">{ctaDescription}</p>
           <Link href="/#contact">
             <CTA text="Get a free quote" type="button" />
           </Link>

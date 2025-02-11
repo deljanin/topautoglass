@@ -2,7 +2,16 @@ import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import LearnMore from "@/app/components/LearnMore";
 import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "#1 Auto Glass Repair Services in Houston, TX | Top Auto Glass",
+  description:
+    "Looking for reliable auto glass repair services in Houston, TX? Top Auto Glass offers expert repairs, replacements, and mobile service. Call us for a free quote!",
+  keywords:
+    "auto glass repair services houston, auto glass houston tx, auto glass repair houston tx, houston tx auto glass, houston auto window repair, vehicle auto glass repair, auto car glass repair near me, auto window shop, auto glass window, car glass repair houston, car window repair houston tx, auto window repair houston, auto repair glass shop near me, replacement auto window glass, auto glass repair services near me, auto glass near me, auto glass replacement houston",
+};
 
 const showcase = [
   {
@@ -62,7 +71,7 @@ export default function AutoGlassPage() {
         }
         imagePath="/images/hero/hero-auto-glass.jpg"
         ctaText="Fix Your Glass Now"
-        ctaLink="/#contact?service=auto-glass"
+        ctaLink="/?service=auto-glass#contact"
         marginTop="mt-24"
       />
       <ServiceShowcase
@@ -77,11 +86,12 @@ export default function AutoGlassPage() {
         showCTA={true}
         ctaTitle="Get a Free Quote Today"
         ctaDescription="Don’t wait to address damaged glass - serious safety concerns deserve timely reactions. Contact us today for expert auto glass repair services in Houston! Click below to get started:"
+        ctaLink="/?service=auto-glass#contact"
       />
       <LearnMore
         sectionTitle="Learn More About Auto Glass in Houston, TX"
         imagePath="/images/learn-more/auto-glass.jpg"
-        ctaLink="/#contact?service=auto-glass"
+        ctaLink="/?service=auto-glass#contact"
         description={
           <>
             Your vehicle deserves the best care, and at Top Auto Glass, we’re

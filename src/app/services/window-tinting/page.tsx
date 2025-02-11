@@ -5,6 +5,15 @@ import HeroVerticalGradient from "@/app/components/HeroVerticalGradient";
 import ImageSection from "@/app/components/ImageSection";
 import LearnMore from "@/app/components/LearnMore";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Window Tinting Services in Houston, TX | Top Auto Glass",
+  description:
+    "Enhance privacy and style with professional window tinting in Houston, TX. Top Auto Glass offers quality tinting with great pricing. Call today for a free quote!",
+  keywords:
+    "window tinting houston, car tint houston, window tint houston tx, car tint houston tx, houston tinted windows, tint houston, tint houston tx, window tint houston prices, auto tint houston, window film houston, car window tinting houston, cheap window tint houston, tint shop houston tx, best window tint houston, best window tint in houston tx, auto window tint houston, auto window tinting houston tx, car window tinting houston tx, best car window tint houston",
+};
 
 const expectations = [
   {
@@ -51,7 +60,7 @@ export default function WindowTintingPage() {
           </>
         }
         imagePath="/images/hero/hero-window-tinting.jpg"
-        ctaLink="/contact?service=window-tinting"
+        ctaLink="/?service=window-tinting#contact"
         ctaText="Block the Heat"
         marginTop="mt-20"
       />
@@ -102,7 +111,9 @@ export default function WindowTintingPage() {
             can get all of these benefits at a reasonable price and unrivaled
             quality.
           </p>
-          <CTA text="Contact Us Today" type="button" />
+          <Link href="/?service=window-tinting#contact">
+            <CTA text="Contact Us Today" type="button" />
+          </Link>
         </div>
       </section>
       <ImageSection
@@ -137,7 +148,7 @@ export default function WindowTintingPage() {
       <GradientImage
         sectionTitle="Get a Free Quote Today"
         imagePath="/images/gradient-image/window-tinting.jpg"
-        ctaLink="/#contact?service=window-tinting"
+        ctaLink="/?service=window-tinting#contact"
         description={
           <>
             Ready to upgrade your vehicle with professional window tinting?
@@ -154,7 +165,7 @@ export default function WindowTintingPage() {
       <LearnMore
         sectionTitle="Learn More About Window Tinting in Houston, TX"
         imagePath="/images/learn-more/window-tinting.jpg"
-        ctaLink="/#contact?service=auto-glass"
+        ctaLink="/?service=window-tinting#contact"
         description={
           <>
             When it comes to upgrading your vehicle’s comfort and appearance,

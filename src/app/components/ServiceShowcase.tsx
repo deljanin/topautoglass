@@ -37,10 +37,9 @@ export default function ServiceShowcase({
 
           if (counter % 2 === 0) {
             return (
-              <>
+              <React.Fragment key={i}>
                 {i === 3 && <div></div>}
                 <div
-                  key={service.title}
                   id={service.link}
                   className="flex min-h-[440px] w-full scroll-mt-40 flex-col rounded-md bg-[linear-gradient(316deg,#303030_-5.82%,#404040_47.8%,#303030_100.65%)] shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)] md:flex-row"
                 >
@@ -95,12 +94,12 @@ export default function ServiceShowcase({
                     />
                   </div>
                 </div>
-              </>
+              </React.Fragment>
             );
           } else {
             return (
               <div
-                key={service.title}
+                key={i}
                 id={service.link}
                 className="flex min-h-[440px] w-full scroll-mt-40 flex-col-reverse rounded-md bg-[linear-gradient(316deg,#303030_-5.82%,#404040_47.8%,#303030_100.65%)] shadow-[0px_0px_15px_2px_rgba(0,0,0,0.50)] md:flex-row"
               >

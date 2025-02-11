@@ -5,6 +5,16 @@ import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Paint Protection Film in Houston | Car Protection | Top Auto Glass",
+  description:
+    "Protect your car with premium paint protection film in Houston, TX. Top Auto Glass offers expert installation for long-lasting protection. Call now!",
+  keywords:
+    "paint protection film houston, houston paint protection, paint protection film houston tx, clear bra car houston, clear bra houston, paint protection houston, paint protection film near me, ppf film, auto bra, ppf wrap, car paint protection film, clear bra for car, auto paint protection film, automotive paint protection film, ppf auto",
+};
+
 const showcase = [
   {
     title: "Full Vehicle Coverage",
@@ -65,7 +75,7 @@ export default function PpfPage() {
           </>
         }
         imagePath="/images/hero/hero-paint-protection-film.jpg"
-        ctaLink="/#contact?service=paint-protection-film"
+        ctaLink="/?service=paint-protection-film#contact"
         ctaText="Explore Options"
         marginTop="mt-24"
       />
@@ -116,7 +126,7 @@ export default function PpfPage() {
       <GradientImage
         sectionTitle="Why Choose Top Auto Glass for PPF in Houston?"
         imagePath="/images/gradient-image/paint-protection-film.jpg"
-        ctaLink="/#contact?service=paint-protection-film"
+        ctaLink="/?service=paint-protection-film#contact"
         description={
           <>
             When it comes to paint protection film in Houston, you need a
@@ -135,7 +145,7 @@ export default function PpfPage() {
       <LearnMore
         sectionTitle="Learn More About Premium Paint Protection Film in Houston, TX"
         imagePath="/images/learn-more/paint-protection-film.jpg"
-        ctaLink="/#contact?service=paint-protection-film"
+        ctaLink="/?service=paint-protection-film#contact"
         description={
           <>
             Paint protection film (PPF) is a game changer if you’re looking to

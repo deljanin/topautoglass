@@ -1,71 +1,72 @@
 import { NextResponse } from "next/server";
 import sgMail from "@sendgrid/mail";
+
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || "");
 
 export async function POST(request: Request) {
-  const {
-    extra,
-    name,
-    email,
-    phoneNumber,
-    carYear,
-    brandMake,
-    model,
-    vinNumber,
-    whichGlass,
-  } = await request.json();
-  if (extra !== undefined && extra.length > 0) {
-    return;
+  const formData = await request.json();
+
+  // If the hidden extra field is filled, likely a bot submission – bail out.
+  if (formData.extra && formData.extra.length > 0) {
+    return NextResponse.json("Bot detected", { status: 400 });
   }
 
-  const htmlContent = `
+  // Mapping for friendly field labels
+  const fieldLabels: Record<string, string> = {
+    name: "Name",
+    email: "Email",
+    phoneNumber: "Phone Number",
+    carYear: "Car Year",
+    brandMake: "Brand/Make",
+    model: "Model",
+    vinNumber: "VIN Number",
+    service: "Service",
+    whichGlass: "Which Glass",
+    wrapCoverage: "Wrap Coverage",
+    ppfCoverage: "PPF Coverage",
+  };
+
+  // Helper function to transform dash-separated service names to title case.
+  const formatServiceValue = (value: string): string =>
+    value
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+  // Build the HTML content dynamically.
+  let htmlContent = `
     <h3>Website Quote Request</h3>
-    <table style="width: 50%; border-collapse: collapse;">
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Name</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${name}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Email</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${email}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Phone</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${phoneNumber}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Car Year</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${carYear}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Brand Make</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${brandMake}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Model</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${model}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">VIN Number</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${vinNumber}</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid #ddd; padding: 8px;">Which Glass</td>
-        <td style="border: 1px solid #ddd; padding: 8px;">${whichGlass}</td>
-      </tr>
-    </table>`;
+    <table style="width: 50%; border-collapse: collapse;">`;
+
+  Object.entries(formData).forEach(([key, value]) => {
+    if (key === "extra") return; // skip hidden field
+    if (value !== undefined && value !== "") {
+      let displayValue = value;
+      if (key === "service" && typeof value === "string") {
+        displayValue = formatServiceValue(value);
+      }
+      const label = fieldLabels[key] || key;
+      htmlContent += `
+        <tr>
+          <td style="border: 1px solid #ddd; padding: 8px;">${label}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">${displayValue}</td>
+        </tr>`;
+    }
+  });
+
+  htmlContent += "</table>";
 
   const msg = {
-    to: "pecadeljanin@gmail.com", // topautoglasstexas@gmail.com
+    to: "topautoglasstexas@gmail.com", // Change as needed
     from: "website@topautoglasshouston.com",
     subject: "Website Quote",
-    text: `You have received a new quote request. Here is the information: ${name}, ${email}, ${phoneNumber}, ${carYear}, ${brandMake}, ${model}, ${vinNumber}, ${whichGlass}`,
+    text: "You have received a new quote request. Please view the HTML version for details.",
     html: htmlContent,
   };
 
   try {
     await sgMail.send(msg);
-    return NextResponse.json("Email sent");
+    return NextResponse.json({ message: "Email sent" });
   } catch (error) {
     console.error(error);
     return NextResponse.error();

@@ -142,9 +142,8 @@ export function BeforeAfter2() {
           placeholder="blur"
           alt="Windshield repair in Houston"
           fill
-          objectFit="cover"
           src={after2}
-          className="rounded-md object-center"
+          className="rounded-md object-cover object-center"
         />
         <div className="absolute right-0 top-0 rounded-bl-md rounded-tr-md bg-black px-4 py-2 font-cate">
           After
@@ -157,10 +156,9 @@ export function BeforeAfter2() {
           <Image
             placeholder="blur"
             fill
-            objectFit="cover"
             alt="Car window repair in Houston"
             src={before2}
-            className="object-center"
+            className="object-cover object-center"
           />
           <div className="absolute left-0 top-0 rounded-br-md rounded-tl-md bg-black px-3 py-2 font-cate">
             Before

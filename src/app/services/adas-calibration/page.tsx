@@ -9,6 +9,15 @@ import Image from "next/image";
 import Link from "next/link";
 import StaticCalibration from "/public/images/adas-calibration/static-calibration.jpg";
 import DynamicCalibration from "/public/images/adas-calibration/dynamic-calibration.jpg";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Top ADAS Calibration Services in Houston, TX | Top Auto Glass",
+  description:
+    "Ensure safety with expert ADAS calibration in Houston. Top Auto Glass offers precise camera recalibration and windshield calibration services. Call us now!",
+  keywords:
+    "adas calibration houston, car calibration, adas recalibration, calibration services houston, adas camera calibration, calibration houston, houston calibration, calibration houston tx, calibration services houston tx, texas calibration houston, adas calibration cost, windshield camera calibration, calibration for car, adas calibration near me",
+};
 
 const textList = [
   "Expertise and Equipment: At Top Auto Glass, we combine technical expertise with state-of-the-art equipment to deliver precise, manufacturer-approved ADAS calibrations. Your safety is our top priority, and we ensure your vehicle’s systems function exactly as intended.",
@@ -33,7 +42,7 @@ export default function AdasCalibrationPage() {
             Advanced Driver Assistance Systems (ADAS) are at the forefront of
             modern vehicle safety, designed to protect drivers, passengers, and
             pedestrians. Whether it’s ADAS camera calibration after a{" "}
-            <Link href="#contact?service=adas-calibration">
+            <Link href="?service=adas-calibration#contact">
               <u>windshield</u>
             </Link>{" "}
             replacement or ensuring your radar systems are in perfect alignment,
@@ -41,7 +50,7 @@ export default function AdasCalibrationPage() {
           </>
         }
         imagePath="/images/hero/hero-adas-calibration.jpg"
-        ctaLink="/#contact?service=adas-calibration"
+        ctaLink="/?service=adas-calibration#contact"
         ctaText="Calibrate ADAS Today"
       />
       <WideTextSection
@@ -154,8 +163,12 @@ export default function AdasCalibrationPage() {
           Calibrate you ADAS systems today
         </h4>
         <div className="flex flex-wrap items-center justify-center gap-5">
-          <CTA text="Get a Free Quote" type="button" />
-          <CTABlack text="(832) 795-8511" type="button" />
+          <Link href="/?service=adas-calibration#contact">
+            <CTA text="Get a Free Quote" type="button" width="170" />
+          </Link>
+          <a href="tel:+18327958511">
+            <CTABlack text="(832) 795-8511" type="button" width="170" />{" "}
+          </a>
         </div>
       </section>
 
@@ -164,11 +177,12 @@ export default function AdasCalibrationPage() {
         listItems={textList}
         showCTA={true}
         ctaDescription="Ready to recalibrate your ADAS systems? Contact us today to schedule an appointment or request a quote. "
+        ctaLink="/?service=adas-calibration#contact"
       />
       <LearnMore
         sectionTitle="Learn More About ADAS Calibration in Houston, TX"
         imagePath="/images/learn-more/adas-calibration.jpg"
-        ctaLink="/#contact?service=adas-calibration"
+        ctaLink="/?service=adas-calibration#contact"
         description={
           <>
             Advanced Driver Assistance Systems (ADAS) are essential for modern

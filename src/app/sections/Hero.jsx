@@ -97,8 +97,8 @@ export default function Hero() {
           src={heroImage}
           alt="Auto glass in Houston"
           layout="fill"
-          objectFit="cover"
           placeholder="blur"
+          className="object-cover"
           priority
         />
       </div>

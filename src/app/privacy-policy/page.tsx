@@ -42,8 +42,20 @@ const PrivacyPolicy = () => {
               for accurate quoting.
             </li>
             <li>
-              Which Glass: to understand your service needs related to vehicle
-              glass.
+              Service: to indicate the specific service you require. Options
+              include Auto Glass, ADAS Calibration, Window Tinting, Car Wrap,
+              Paint Protection Film, Ceramic Coating, or Multiple.
+            </li>
+            <li>
+              Which Glass: (For Auto Glass) to understand your glass needs.
+            </li>
+            <li>
+              Wrap Coverage: (For Car Wrap) to specify your desired wrap
+              coverage.
+            </li>
+            <li>
+              PPF Coverage: (For Paint Protection Film) to indicate your
+              preferred coverage type.
             </li>
           </ul>
         </section>

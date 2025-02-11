@@ -164,7 +164,6 @@ export default function Navbar() {
         >
           Contact
         </Link>
-        {/* TODO Add mobile links for Service pages */}
       </nav>
 
       {/* Desktop and mobile navbar */}

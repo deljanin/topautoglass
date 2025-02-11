@@ -6,6 +6,16 @@ import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Best Custom Vehicle Wraps in Houston | Top Auto Glass",
+  description:
+    "Transform your car with custom vehicle wraps in Houston, TX. Top Auto Glass offers expert vinyl wraps for cars. Don't hesitate - get a quote!",
+  keywords:
+    "vehicle wraps houston, vinyl wrap houston, auto wrap houston, vinyl wrap houston texas, car wrap houston, vehicle wraps houston texas, car wraps in houston texas, houston vinyl car wraps, vinyl car wrap houston tx, houston car wrap cost, best car wrap houston, houston car wrap shops, car wrap houston texas, car wraps houston pricing, custom car wraps houston, houston vehicle wrap experts, expert car wrap houston",
+};
+
 const showcase = [
   {
     title: "Custom Car Wraps",
@@ -77,7 +87,7 @@ export default function CarWrapPage() {
           </>
         }
         imagePath="/images/hero/hero-car-wrap.jpg"
-        ctaLink="/#contact?service=adas-calibration"
+        ctaLink="/?service=car-wrap#contact"
         ctaText="See the Difference"
       />
       <section className="relative flex w-full flex-col items-center gap-14 py-20 lg:items-start">
@@ -144,7 +154,7 @@ export default function CarWrapPage() {
       <GradientImage
         sectionTitle="Get a Free Quote Today"
         imagePath="/images/gradient-image/car-wrap.jpg"
-        ctaLink="/#contact?service=car-wrap"
+        ctaLink="/?service=car-wrap#contact"
         description={
           <>
             Ready to transform your vehicle with a custom wrap? Call us today to
@@ -160,7 +170,7 @@ export default function CarWrapPage() {
       <LearnMore
         sectionTitle="Learn More About Vehicle Wraps in Houston, TX"
         imagePath="/images/learn-more/car-wrap.jpg"
-        ctaLink="/#contact?service=car-wrap"
+        ctaLink="/?service=car-wrap#contact"
         description={
           <>
             Vehicle wraps are a versatile and cost-effective solution for

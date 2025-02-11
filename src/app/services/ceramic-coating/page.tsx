@@ -6,6 +6,15 @@ import ServiceShowcase from "@/app/components/ServiceShowcase";
 import WideTextList from "@/app/components/WideTextList";
 import WideTextSection from "@/app/components/WideTextSection";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Expert Ceramic Coating in Houston, TX | Top Auto Glass",
+  description:
+    "Protect your car with top ceramic coating in Houston, TX. Top Auto Glass offers services for lasting shine and protection. Get a quote today!",
+  keywords:
+    "ceramic coating houston, ceramic coating houston tx, ceramic car coating houston, best ceramic coating houston, car ceramic coating houston, ceramic coating in houston, ceramic coating houston cost, ceramic coating houston price, auto ceramic coating, ceramic car coating, auto ceramic coating, automotive ceramic coating, best auto ceramic coating, car detailing and ceramic coating, car ceramic coating near me",
+};
 
 const showcase = [
   {
@@ -61,7 +70,7 @@ export default function CeramicCoatingPage() {
           </>
         }
         imagePath="/images/hero/hero-ceramic-coating.jpg"
-        ctaLink="/#contact?service=hero-ceramic-coating"
+        ctaLink="/?service=ceramic-coating#contact"
         ctaText="Discover the Shine"
       />
       <WideTextSection
@@ -113,7 +122,7 @@ export default function CeramicCoatingPage() {
       <GradientImage
         sectionTitle="Get a Free Quote Today"
         imagePath="/images/gradient-image/ceramic-coating.jpg"
-        ctaLink="/#contact?service=ceramic-coating"
+        ctaLink="/?service=ceramic-coating#contact"
         description={
           <>
             Are you ready to give your car the protection it deserves? Contact
@@ -131,7 +140,7 @@ export default function CeramicCoatingPage() {
       <LearnMore
         sectionTitle="Learn More About Ceramic Coating in Houston, TX"
         imagePath="/images/learn-more/ceramic-coating.jpg"
-        ctaLink="/#contact?service=ceramic-coating"
+        ctaLink="/?service=ceramic-coating#contact"
         description={
           <>
             Ceramic coating provides a durable layer of protection for your

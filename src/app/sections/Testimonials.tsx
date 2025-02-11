@@ -88,9 +88,8 @@ export default function Testimonials() {
           src="/images/testimonials/testimonials.jpg"
           alt=""
           fill
-          objectFit="cover"
-          unoptimized={true}
-          className=""
+          quality={100}
+          className="object-cover"
         />
       </div>
     </section>
